@@ -1,0 +1,96 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* aspide
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-19 18:21+0000\n"
+"PO-Revision-Date: 2025-09-19 15:23-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.7\n"
+
+#. module: aspide
+#: model:res.groups,name:aspide.group_aspide_entity
+msgid "Aspide entities"
+msgstr "ÁSPIDE - Fontes externas"
+
+#. module: aspide
+#: model:ir.model,name:aspide.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/company.py:0
+msgid "Connection failed. Server message: "
+msgstr "Falha na conexão. Mensagem do servidor: "
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/company.py:0
+msgid "Connection success!"
+msgstr "Sucesso de conexão!"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.view_company_form
+msgid "Test Connection"
+msgstr "Testar conexão"
+
+#. module: aspide
+#: model:ir.model.fields,help:aspide.field_res_company__aspide_database
+msgid "aspide"
+msgstr ""
+
+#. module: aspide
+#: model:ir.model.fields,help:aspide.field_res_company__aspide_user
+msgid "example@yourcompany.com"
+msgstr ""
+
+#. module: aspide
+#: model:ir.model.fields,help:aspide.field_res_company__aspide_url
+msgid "https://aspide.tec.br"
+msgstr ""
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.view_company_form
+msgid "ÁSPIDE"
+msgstr ""
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_res_company__aspide_database
+msgid "ÁSPIDE - Database"
+msgstr "ÁSPIDE - Base de Dados"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_res_company__aspide_password
+msgid "ÁSPIDE - Password"
+msgstr "ÁSPIDE - Senha"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_res_company__aspide_ssh
+msgid "ÁSPIDE - SSH"
+msgstr ""
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_res_company__aspide_url
+msgid "ÁSPIDE - URL"
+msgstr ""
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_res_company__aspide_user
+msgid "ÁSPIDE - User"
+msgstr "ÁSPIDE - Usuário"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/company.py:0
+msgid "ÁSPIDE connection status"
+msgstr "Status da conexão ÁSPIDE"

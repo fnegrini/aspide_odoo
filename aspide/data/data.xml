@@ -1,0 +1,12 @@
+<odoo>
+    <data noupdate="1">
+
+		<record id="base.main_company" model="res.company">
+			<field name="aspide_url">https://aspide.tec.br</field>
+			<field name="aspide_database">aspide</field>
+            <field name="aspide_user">aspide</field>
+            <field name="aspide_password">aspide</field>
+		</record>
+
+    </data>
+</odoo>
