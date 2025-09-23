@@ -2,7 +2,7 @@
 
 from odoo import models, fields, _
 
-from .api_utils import api_client
+from .api_utils import aspide_client
 
 class Company(models.Model):
     _inherit = 'res.company'
@@ -20,10 +20,19 @@ class Company(models.Model):
     aspide_ssh = fields.Boolean(string="ÁSPIDE - SSH", default=True)
 
 
+    def get_aspide_connection(self):
+
+        client = aspide_client(self.aspide_url, self.aspide_database, self.aspide_user, self.aspide_password, self.aspide_ssh)
+
+        client.authenticate()
+
+        return client
+
+
     def aspide_test_connection(self):
         
 
-        client = api_client(self.aspide_url, self.aspide_database, self.aspide_user, self.aspide_password, self.aspide_ssh)
+        client = aspide_client(self.aspide_url, self.aspide_database, self.aspide_user, self.aspide_password, self.aspide_ssh)
 
         try:
             

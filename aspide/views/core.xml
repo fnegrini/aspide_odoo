@@ -1,5 +1,12 @@
 <odoo>
   <data>
-        
+
+    <!-- ASPIDE Main -->
+    <menuitem name="ÁSPIDE"
+        id="menu_aspide_main"
+        groups="aspide.group_aspide_entity"
+        web_icon="aspide,static/description/icon.png"
+        sequence="10000"/>
+
   </data>
 </odoo>

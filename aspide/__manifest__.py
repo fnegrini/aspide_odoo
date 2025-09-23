@@ -22,6 +22,9 @@
         'security/ir.model.access.csv',
         'views/core.xml',
         'views/company.xml',
+        'views/entity.xml',
+        'views/external_company.xml',
+        'views/person.xml',
         'data/data.xml',
     ],
 	

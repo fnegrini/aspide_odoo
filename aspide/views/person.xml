@@ -1,0 +1,121 @@
+<odoo>
+  <data>
+  
+    <!-- Views -->
+    <record model="ir.ui.view" id="aspide_external_person_tree">
+        <field name="name">aspide.external.person.tree</field>
+        <field name="model">aspide.external.person</field>
+        <field name="arch" type="xml">
+            <list string="External Person">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="situation"/>
+                <field name="birth"/>
+            </list>
+        </field>
+     </record>
+        
+     <record model="ir.ui.view" id="aspide_external_person_form">
+        <field name="name">aspide.external.person.form</field>
+        <field name="model">aspide.external.person</field>
+        <field name="arch" type="xml">
+			<form string="External Person">
+				<sheet>
+					<header>
+						<button name="retrieve" type="object" string="Retrieve data" class="oe_highlight"/>
+						<button name="search_companies" type="object" string="Search companies" class="oe_highlight"/>
+					</header>
+					<group>
+						<field name="timestamp" readonly="1"/>
+						<field name="error_message" readonly="1" invisible="not error_message"/>
+					</group>
+					<group readonly="1">
+						<field name="code" required="1" readonly="timestamp"/>
+						<field name="name" readonly="1"/>
+						<field name="situation" readonly="1"/>
+						<field name="birth" readonly="1"/>
+						<field name="death" readonly="1"/>
+					</group>
+					<notebook name="aspide_sub">
+		            	<page string="Companies">
+					        <group>
+								<field name="companies_searched" readonly="1"/>
+						    </group>
+					        <group>
+					            <field name="companies" widget="one2many_list" colspan="2" nolabel="1" readonly="1"/>
+						    </group>
+						</page>          
+					</notebook>
+				</sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="aspide_external_person_company_tree">
+        <field name="name">aspide.external.person.company.tree</field>
+        <field name="model">aspide.external.person.company</field>
+        <field name="arch" type="xml">
+            <list string="External Person company">
+            	<field name="external_company" readonly="1"/>
+                <field name="qualification_name" readonly="1"/>
+                <field name="start_date" readonly="1"/>
+				<field name="share_percent" readonly="1"/>
+            </list>
+        </field>
+	</record>
+
+     <record model="ir.ui.view" id="aspide_external_person_company_form">
+        <field name="name">aspide.external.person.company.form</field>
+        <field name="model">aspide.external.person.company</field>
+        <field name="arch" type="xml">
+			<form string="External Person company">
+				<sheet>
+					<group>
+						<field name="person" readonly="1"/>
+						<field name="code" readonly="1"/>
+						<field name="external_company" readonly="1"/>
+						<field name="start_date" readonly="1"/>
+						<field name="share_percent" readonly="1"/>
+					</group>
+                    <group>
+                        <label for="qualification"/>
+                        <div>
+                            <field name="qualification" class="oe_inline" readonly="1"/>
+                            <field name="qualification_name" class="oe_inline" readonly="1"/>
+                        </div>
+                    </group>	                    
+				</sheet>
+            </form>
+        </field>
+    </record>     
+    
+    <!-- Action -->
+
+    <record model="ir.actions.act_window" id="aspide_external_person_action">
+        <field name="name">External Person</field>
+        <field name="res_model">aspide.external.person</field>
+        <field name="view_mode">list,form,pivot,graph</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create a new External Person
+            </p>
+        </field>
+    </record>
+          
+    <!-- Menu Item -->
+    <menuitem 
+        name="External Person" 
+        id="menu_aspide_external_person" 
+        parent="menu_aspide_main" 
+        action="aspide_external_person_action" 
+        groups="group_aspide_entity"
+        sequence="300"/>
+
+ 	<!-- Rule -->
+    <record model="ir.rule" id="aspide_external_person_rule">
+        <field name="name">Multicompany Rule</field>
+        <field name="model_id" ref="model_aspide_external_person"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','in', company_ids)]</field>
+    </record>
+  </data>
+</odoo>

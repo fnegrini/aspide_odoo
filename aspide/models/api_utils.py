@@ -68,6 +68,7 @@ def fields_to_lower_case(fields):
     
     return new_fields
 
+
 class api_client():
 
     def __init__(self, host, database, user, password, ssh=True):
@@ -230,10 +231,23 @@ class api_client():
         return self.cookie != False
 
 
+class aspide_client(api_client):
+
+    def get_entity(self, cnpj):
+
+        uri = '/grifo_external_source/entity/'
+
+        cnpj_fmt = ('%014d' % int(cnpj))
+
+        params = {"cnpj": cnpj_fmt}
+
+        company_data = self.call("POST", uri, params)
+
+        return company_data['object']
 
 
 def run_test():
-    client = api_client('grifo.tec.br:8443', 'backbone', 'admin', 'backbone')
+    client = api_client('aspide.tec.br', 'backbone', 'admin', 'backbone')
 
     client.authenticate()
 
@@ -249,4 +263,5 @@ def run_test():
 
 if __name__ == '__main__':
     run_test()
+
 

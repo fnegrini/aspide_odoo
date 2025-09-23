@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-19 18:21+0000\n"
-"PO-Revision-Date: 2025-09-19 15:23-0300\n"
+"PO-Revision-Date: 2025-09-23 11:50-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. module: aspide
 #: model:res.groups,name:aspide.group_aspide_entity
 msgid "Aspide entities"
-msgstr "ÁSPIDE - Fontes externas"
+msgstr "ÁSPIDE - Empresas"
 
 #. module: aspide
 #: model:ir.model,name:aspide.model_res_company

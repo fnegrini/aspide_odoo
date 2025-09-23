@@ -1,0 +1,307 @@
+<odoo>
+  <data>
+  
+    <!-- Views -->
+    <record model="ir.ui.view" id="aspide_external_entity_tree">
+        <field name="name">aspide.external.entity.tree</field>
+        <field name="model">aspide.external.entity</field>
+        <field name="arch" type="xml">
+            <list string="External Entity">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="name_adm"/>
+                <field name="timestamp"/>
+            </list>
+        </field>
+     </record>
+        
+     <record model="ir.ui.view" id="aspide_external_entity_form">
+        <field name="name">aspide.external.entity.form</field>
+        <field name="model">aspide.external.entity</field>
+        <field name="arch" type="xml">
+			<form string="External Entity">
+				<sheet>
+					<header>
+						<button name="retrieve" type="object" string="Retrieve" class="oe_highlight"/> -->
+						<button name="fetch_external_company" type="object" string="Fetch company" class="oe_highlight"/>
+					</header>
+					<group>
+						<field name="timestamp" readonly="1"/>
+						<field name="error_message" readonly="1" invisible="not error_message"/>
+					</group>
+					<group colspan="4">
+						<field name="company_id" invisible="1"/>
+						<field name="external_company" readonly="1" invisible="not external_company"/>
+						<field name="code" required="1" readonly="timestamp"/>
+						<field name="name" readonly="1"/>
+						<field name="name_adm" readonly="1"/>
+						<field name="type" readonly="1"/>
+						<field name="start_date" readonly="1"/>
+						<field name="state_insc" readonly="1"/>
+					</group>
+					<group>
+						<label for="legal_nature"/>
+						<div>
+							<field name="legal_nature" class="oe_inline" readonly="1"/>
+							<field name="legal_nature_name" class="oe_inline" readonly="1"/>
+						</div>
+					</group>							
+					<group>
+						<label for="cnae_code"/>
+						<div>
+							<field name="cnae_code" class="oe_inline" readonly="1"/>
+							<field name="cnae_name" class="oe_inline" readonly="1"/>
+						</div>
+					</group>						
+					<notebook name="aspide_sub">
+		            	<page string="Situation">
+							<group readonly="1">
+								<field name="situation" readonly="1"/>
+								<field name="situation_date" readonly="1"/>
+							</group>
+							<group>
+								<label for="situation_reason"/>
+								<div>
+									<field name="situation_reason" class="oe_inline" readonly="1"/>
+									<field name="situation_reason_name" class="oe_inline" readonly="1"/>
+								</div>
+							</group>							
+		            	</page>
+		            	<page string="Classification">
+							<group>
+								<label for="partner_qualification"/>
+								<div>
+									<field name="partner_qualification" class="oe_inline" readonly="1"/>
+									<field name="partner_qualification_name" class="oe_inline" readonly="1"/>
+								</div>
+							</group>								
+							<group readonly="1">
+								<field name="share_capital" readonly="1"/>
+								<field name="company_size" readonly="1"/>
+								<field name="simple" readonly="1"/>
+								<field name="simple_start_date" readonly="1"/>
+								<field name="simple_end_date" readonly="1"/>
+								<field name="ind_mei" readonly="1"/>
+								<field name="special_situation" readonly="1"/>
+								<field name="special_situation_date" readonly="1"/>
+							</group>
+						</page>  		                    
+		            	<page string="Address">
+							<group readonly="1">
+								<field name="addr_type" readonly="1"/>
+								<field name="address" readonly="1"/>
+								<field name="addr_number" readonly="1"/>
+								<field name="addr_comp" readonly="1"/>
+								<field name="addr_district" readonly="1"/>
+								<field name="addr_zip_code" readonly="1"/>
+								<field name="addr_state" readonly="1"/>
+								<field name="addr_state_ibge" readonly="1"/>
+								<field name="addr_city_code" readonly="1"/>
+								<field name="addr_city_ibge_code" readonly="1"/>
+								<field name="addr_city_name" readonly="1"/>
+							</group>
+						</page>  		                    
+		            	<page string="Foreign Location">
+							<group readonly="1">
+								<field name="foreign_city" readonly="1"/>
+								<field name="country_code" readonly="1"/>
+								<field name="country_name" readonly="1"/>
+							</group>
+						</page>          
+		            	<page string="Communication">
+							<group readonly="1">
+								<field name="phone1" readonly="1"/>
+								<field name="phone2" readonly="1"/>
+								<field name="fax" readonly="1"/>
+								<field name="email" readonly="1"/>
+							</group>
+						</page> 
+			    		<page string="State Insc">
+					        <group>
+					            <field name="ies" widget="one2many_list" colspan="2" nolabel="1" readonly="1"/>
+						    </group>
+			    		</page>        
+			    		<page string="Partners">
+					        <group>
+					            <field name="partners" widget="one2many_list" colspan="2" nolabel="1" readonly="1"/>
+						    </group>
+			    		</page>        
+			    		<page string="Secondary CNAEs">
+					        <group>
+					            <field name="cnaes" widget="one2many_list" colspan="2" nolabel="1" readonly="1"/>
+						    </group>
+			    		</page>        
+					</notebook>
+				</sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="aspide_external_entity_ie_tree">
+        <field name="name">aspide.external.entity.ie.tree</field>
+        <field name="model">aspide.external.entity.ie</field>
+        <field name="arch" type="xml">
+            <list string="External Entity - State Insc" editable="bottom">
+                <field name="state" readonly="1"/>
+                <field name="code" readonly="1"/>
+                <field name="enabled" readonly="1"/>
+				<field name="date" readonly="1"/>
+				<field name="type" readonly="1"/>
+				<field name="status" readonly="1"/>
+            </list>
+        </field>
+    </record>
+     
+
+    <record model="ir.ui.view" id="aspide_external_entity_ie_form">
+        <field name="name">aspide.external.entity.ie.form</field>
+        <field name="model">aspide.external.entity.ie</field>
+        <field name="arch" type="xml">
+			<form string="External Entity - State Insc">
+				<sheet>
+					<group>
+						<field name="entity" readonly="1"/>
+						<field name="state" readonly="1"/>
+						<field name="code" readonly="1"/>
+						<field name="enabled" readonly="1"/>
+						<field name="date" readonly="1"/>
+						<field name="type" readonly="1"/>
+						<field name="status" readonly="1"/>
+					</group>
+				</sheet>
+            </form>
+        </field>
+    </record>
+
+    
+    <record model="ir.ui.view" id="aspide_external_entity_cnae_tree">
+        <field name="name">aspide.external.entity.cnae.tree</field>
+        <field name="model">aspide.external.entity.cnae</field>
+        <field name="arch" type="xml">
+            <list string="External Entity - Secondary CNAEs" editable="bottom">
+                <field name="code" readonly="1"/>
+                <field name="cnae_name" readonly="1"/>
+            </list>
+        </field>
+     </record>
+     
+
+    <record model="ir.ui.view" id="aspide_external_entity_cnae_form">
+        <field name="name">aspide.external.entity.cnae.form</field>
+        <field name="model">aspide.external.entity.cnae</field>
+        <field name="arch" type="xml">
+			<form string="External Entity - Secondary CNAEs">
+				<sheet>
+					<group>
+						<field name="entity" readonly="1"/>
+					</group>
+					<group>
+						<label for="code"/>
+						<div>
+							<field name="code" class="oe_inline" readonly="1"/>
+							<field name="cnae_name" class="oe_inline" readonly="1"/>
+						</div>
+					</group>						
+				</sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="aspide_external_entity_partner_tree">
+        <field name="name">aspide.external.entity.partner.tree</field>
+        <field name="model">aspide.external.entity.partner</field>
+        <field name="arch" type="xml">
+            <list string="External Entity - Partner">
+            	<field name="type" readonly="1"/>
+                <field name="code" readonly="1"/>
+                <field name="name" readonly="1"/>
+            </list>
+        </field>
+	</record>
+
+     <record model="ir.ui.view" id="aspide_external_entity_partner_form">
+        <field name="name">aspide.external.entity.partner.form</field>
+        <field name="model">aspide.external.entity.partner</field>
+        <field name="arch" type="xml">
+			<form string="External Entity - Partner">
+				<sheet>
+					<group>
+						<field name="entity" readonly="1"/>
+						<field name="type" readonly="1"/>
+						<field name="code" readonly="1"/>
+						<field name="name" readonly="1"/>
+					</group>
+					<notebook name="aspide_sub">
+		            	<page string="Classification">
+							<group>
+								<label for="qualification"/>
+								<div>
+									<field name="qualification" class="oe_inline" readonly="1"/>
+									<field name="qualification_name" class="oe_inline" readonly="1"/>
+								</div>
+							</group>							
+							<group>
+								<label for="agegroup"/>
+								<div>
+									<field name="agegroup" class="oe_inline" readonly="1"/>
+									<field name="agegroup_name" class="oe_inline" readonly="1"/>
+								</div>
+							</group>
+							<group>
+								<field name="share_percent" readonly="1"/>
+								<field name="start_date" readonly="1"/>
+							</group>
+						</page>  		                    
+		            	<page string="Foreign Address">
+							<group>
+								<field name="country_code" readonly="1"/>
+								<field name="country_name" readonly="1"/>
+							</group>
+						</page>  		                    
+		            	<page string="Legal Agent">
+							<group>
+								<field name="legal_agent_code" readonly="1"/>
+								<field name="legal_agent_name" readonly="1"/>
+							</group>
+							<group>
+								<label for="legal_agent_qualification"/>
+								<div>
+									<field name="legal_agent_qualification" class="oe_inline" readonly="1"/>
+									<field name="legal_agent_qualification_name" class="oe_inline" readonly="1"/>
+								</div>
+							</group>							
+						</page>          
+					</notebook>
+				</sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="aspide_external_entity_action">
+        <field name="name">External Entity</field>
+        <field name="res_model">aspide.external.entity</field>
+        <field name="view_mode">list,form,pivot,graph</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create a new External Entity
+            </p>
+        </field>
+    </record>
+          
+    <!-- Menu Item -->
+    <menuitem name="External Entity" 
+		id="menu_aspide_external_entity" 
+		parent="menu_aspide_main" 
+		action="aspide_external_entity_action" 
+		groups="group_aspide_entity" 
+		sequence="100"/>
+
+ 	<!-- Rule -->
+    <record model="ir.rule" id="aspide_external_entity_rule">
+        <field name="name">Multicompany Rule</field>
+        <field name="model_id" ref="model_aspide_external_entity"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','in', company_ids)]</field>
+    </record>
+  </data>
+</odoo>
