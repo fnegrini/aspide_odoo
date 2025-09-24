@@ -156,6 +156,29 @@ class aspide_external_entity(models.Model):
         return [rec.id for rec in recs]
 
 
+    @api.model
+    def check_entity(self, code, company_id):
+
+        if company_id:
+            company = company_id
+        else:
+            company = self.env.company
+        
+        entities = self.search([('company_id','=', company.id), ('code', '=', code)])
+
+        if len(entities) > 0:
+
+            return entities[0]
+        
+        else:
+
+            entities = self.create({'company_id': company.id, 'code': code})
+
+            entities.retrieve()
+
+            return entities
+
+
     @api.depends('code','name','name_adm')
     def _compute_display_name(self):
         
@@ -347,6 +370,8 @@ class aspide_external_entity(models.Model):
             entity_data = aspide.get_entity(self.code)
 
             self.refresh_from_api(entity_data)
+
+            aspide.logout()
         
         except Exception as e:
 
@@ -355,7 +380,8 @@ class aspide_external_entity(models.Model):
 
     def fetch_external_company(self):
 
-        pass
+        self.external_company = self.external_company.check_external_company(self.code[:8], self.company_id)
+
 
 class aspide_external_entity_partner(models.Model):
     _name = 'aspide.external.entity.partner'

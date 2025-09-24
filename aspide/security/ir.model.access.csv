@@ -10,6 +10,7 @@ access_company_partner,Company Partner,model_aspide_external_company_partner,asp
 access_company_partner_company,Company Partner Company,model_aspide_external_company_partner_company,aspide.group_aspide_entity,1,1,1,1
 access_company_partner_person,Company Partner Person,model_aspide_external_company_partner_person,aspide.group_aspide_entity,1,1,1,1
 access_company_regime,Company Regime,model_aspide_external_company_regime,aspide.group_aspide_entity,1,1,1,1
+access_company_company,Company Partner Company,model_aspide_external_company_company,aspide.group_aspide_entity,1,1,1,1
 
 
 access_person,Person,model_aspide_external_person,aspide.group_aspide_entity,1,1,1,1

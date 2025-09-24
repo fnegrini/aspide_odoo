@@ -46,12 +46,81 @@ class aspide_external_person(models.Model):
 
     def retrieve(self):
 
-        pass
+        try:
+
+            aspide = self.company_id.get_aspide_connection()
+
+            data = aspide.get_person(self.code)
+
+            self.refresh_from_api(data)
+
+            aspide.logout()
+        
+        except Exception as e:
+
+            self.error_message = str(e)
+
+
+
+    def refresh_from_api(self, data):
+
+        self.timestamp = data['timestamp']
+        self.error_message = False
+        self.name = data['name']
+        self.situation = data['situation']
+        self.birth = data['birth']
+        self.death = data['death']
+
+        self.refresh_companies_from_api(data['companies'])
+
+
+    def refresh_companies_from_api(self, companies):
+
+        self.companies.refresh(self)
+
+        for company in companies:
+
+            fields = {}
+
+            fields['person'] = self.id
+            fields['code'] = company['code']
+            fields['name'] = company['name']
+            fields['qualification'] = company['qualification']
+
+            if company['qualification_id']:
+
+                fields['qualification_id'] = company['qualification_id']['id']
+                fields['qualification_name'] = company['qualification_id']['display_name']
+
+            fields['start_date'] = company['start_date']
+            fields['share_percent'] = company['share_percent']
+
+            self.companies.create(fields)
+
+        self.companies_searched = len(companies) > 0
+
 
 
     def search_companies(self):
+        
+        if self.companies_searched:
+            return
 
-        pass
+        try:
+
+            aspide = self.company_id.get_aspide_connection()
+
+            data = aspide.get_person(self.code)
+
+            self.refresh_companies_from_api(data['companies'])
+
+            aspide.logout()
+
+            self.companies_searched = True
+        
+        except Exception as e:
+
+            self.error_message = str(e)
 
 
 
@@ -63,6 +132,8 @@ class aspide_external_person_company(models.Model):
 
     #Company data
     code = fields.Char(string="Base CNPJ", size=8, index=True)
+
+    name = fields.Char(string="Name", size=150)
 
     external_company = fields.Many2one('aspide.external.company', 'External Company', ondelete='set null')
 
@@ -78,3 +149,13 @@ class aspide_external_person_company(models.Model):
 
     share_percent = fields.Float(string="Share Percentage", digits=(7,4))
 
+    @api.model
+    def refresh(self, person):
+        sql = ('DELETE FROM %s WHERE person = %d' % (self._table, person.id))
+        self._cr.execute(sql)
+        self.env.cr.commit()
+
+
+    def fetch_company(self):
+
+        self.external_company = self.env['aspide.external.company'].check_external_company(self.code, self.person.company_id)

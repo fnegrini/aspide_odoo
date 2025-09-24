@@ -143,7 +143,7 @@
         <field name="name">aspide.external.entity.ie.tree</field>
         <field name="model">aspide.external.entity.ie</field>
         <field name="arch" type="xml">
-            <list string="External Entity - State Insc" editable="bottom">
+            <list string="External Entity - State Insc">
                 <field name="state" readonly="1"/>
                 <field name="code" readonly="1"/>
                 <field name="enabled" readonly="1"/>
@@ -180,7 +180,7 @@
         <field name="name">aspide.external.entity.cnae.tree</field>
         <field name="model">aspide.external.entity.cnae</field>
         <field name="arch" type="xml">
-            <list string="External Entity - Secondary CNAEs" editable="bottom">
+            <list string="External Entity - Secondary CNAEs">
                 <field name="code" readonly="1"/>
                 <field name="cnae_name" readonly="1"/>
             </list>

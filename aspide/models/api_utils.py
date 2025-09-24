@@ -2,7 +2,7 @@ from datetime import datetime
 import http.client
 import json
 import ssl
-
+from odoo.exceptions import UserError
 
 def date_api_to_odoo(date):
     if date == None or date == False:
@@ -241,9 +241,114 @@ class aspide_client(api_client):
 
         params = {"cnpj": cnpj_fmt}
 
-        company_data = self.call("POST", uri, params)
+        data = self.call("POST", uri, params)
 
-        return company_data['object']
+        if data['status'] != 200:
+
+            raise UserError(data['message'])
+
+        return data['object']
+
+
+    def get_company(self, base_cnpj):
+
+        uri = '/grifo_external_source/company/'
+
+        base_cnpj_fmt = ('%08d' % int(base_cnpj))
+
+        params = {"base_cnpj": base_cnpj_fmt}
+
+        data = self.call("POST", uri, params)
+
+        if data['status'] != 200:
+
+            raise UserError(data['message'])
+
+        return data['object']
+
+
+    def get_company_regime(self, base_cnpj):
+
+        uri = '/grifo_external_source/company/fetch_regimes/'
+
+        base_cnpj_fmt = ('%08d' % int(base_cnpj))
+
+        params = {"base_cnpj": base_cnpj_fmt}
+
+        data = self.call("POST", uri, params)
+
+        if data['status'] != 200:
+
+            raise UserError(data['message'])
+
+        return data['object']['regimes']
+
+
+    def get_company_partner_companies(self, base_cnpj):
+
+        uri = '/grifo_external_source/company/partner_search_companies/'
+
+        base_cnpj_fmt = ('%08d' % int(base_cnpj))
+
+        params = {"base_cnpj": base_cnpj_fmt}
+
+        data = self.call("POST", uri, params)
+
+        if data['status'] != 200:
+
+            raise UserError(data['message'])
+
+        return data['object']
+
+    
+    def search_partners_person(self, base_cnpj):
+
+        uri = '/grifo_external_source/company/search_partners_person/'
+
+        base_cnpj_fmt = ('%08d' % int(base_cnpj))
+
+        params = {"base_cnpj": base_cnpj_fmt}
+
+        data = self.call("POST", uri, params)
+
+        if data['status'] != 200:
+
+            raise UserError(data['message'])
+
+        return data['object']
+
+
+    def get_person(self, cpf):
+
+        uri = '/grifo_external_source/person/'
+
+        cpf_fmt = ('%11d' % int(cpf))
+
+        params = {"cpf": cpf_fmt}
+
+        data = self.call("POST", uri, params)
+
+        if data['status'] != 200:
+
+            raise UserError(data['message'])
+
+        return data['object']
+    
+    def search_person_companies(self, cpf):
+
+        uri = '/grifo_external_source/person/companies_search/'
+
+        cpf_fmt = ('%11d' % int(cpf))
+
+        params = {"cpf": cpf_fmt}
+
+        data = self.call("POST", uri, params)
+
+        if data['status'] != 200:
+
+            raise UserError(data['message'])
+
+        return data['object']
 
 
 def run_test():

@@ -57,7 +57,8 @@
         <field name="model">aspide.external.person.company</field>
         <field name="arch" type="xml">
             <list string="External Person company">
-            	<field name="external_company" readonly="1"/>
+            	<field name="code" readonly="1"/>
+                <field name="name" readonly="1"/>
                 <field name="qualification_name" readonly="1"/>
                 <field name="start_date" readonly="1"/>
 				<field name="share_percent" readonly="1"/>
@@ -71,10 +72,14 @@
         <field name="arch" type="xml">
 			<form string="External Person company">
 				<sheet>
+					<header>
+						<button name="fetch_company" type="object" string="Fetch Company" class="oe_highlight"/>
+					</header>	                    
 					<group>
 						<field name="person" readonly="1"/>
 						<field name="code" readonly="1"/>
-						<field name="external_company" readonly="1"/>
+                        <field name="name" readonly="1"/>
+						<field name="external_company" readonly="1" invisible="not external_company"/>
 						<field name="start_date" readonly="1"/>
 						<field name="share_percent" readonly="1"/>
 					</group>
