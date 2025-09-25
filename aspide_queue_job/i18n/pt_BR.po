@@ -1,0 +1,124 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* aspide_queue_job
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-25 14:12+0000\n"
+"PO-Revision-Date: 2025-09-25 11:15-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.7\n"
+
+#. module: aspide_queue_job
+#: model:ir.model,name:aspide_queue_job.model_aspide_external_company
+msgid "External Company"
+msgstr "Empresa"
+
+#. module: aspide_queue_job
+#: model:ir.model,name:aspide_queue_job.model_aspide_external_entity
+msgid "External Entity"
+msgstr "Estabelecimento"
+
+#. module: aspide_queue_job
+#: model:ir.model,name:aspide_queue_job.model_aspide_external_person
+msgid "External Person"
+msgstr "Pessoa física"
+
+#. module: aspide_queue_job
+#: model:ir.actions.server,name:aspide_queue_job.aspide_external_company_fetch_regimes_action
+msgid "Fetch Regimes"
+msgstr "Buscar regimes"
+
+#. module: aspide_queue_job
+#: model:ir.actions.server,name:aspide_queue_job.aspide_external_entity_fetch_external_company_action
+msgid "Fetch company"
+msgstr "Buscar empresa"
+
+#. module: aspide_queue_job
+#: model:ir.actions.server,name:aspide_queue_job.aspide_external_company_fetch_branches_action
+msgid "Fetch entities"
+msgstr "Buscar estabelecimentos"
+
+#. module: aspide_queue_job
+#. odoo-python
+#: code:addons/aspide_queue_job/models/entity.py:0
+msgid "Fetching company for Entity "
+msgstr "Buscando empresa para estabelecimento"
+
+#. module: aspide_queue_job
+#: model:ir.actions.server,name:aspide_queue_job.aspide_external_company_retrieve_action
+#: model:ir.actions.server,name:aspide_queue_job.aspide_external_entity_retrieve_action
+#: model:ir.actions.server,name:aspide_queue_job.aspide_external_person_retrieve_action
+msgid "Retrieve"
+msgstr "Recuperar"
+
+#. module: aspide_queue_job
+#. odoo-python
+#: code:addons/aspide_queue_job/models/external_company.py:0
+msgid "Retrieving Entities for Company "
+msgstr "Recuperando estabelecimentos para a empresa "
+
+#. module: aspide_queue_job
+#. odoo-python
+#: code:addons/aspide_queue_job/models/external_company.py:0
+msgid "Retrieving Regimes Company "
+msgstr "Recuperando Regimes da empresa "
+
+#. module: aspide_queue_job
+#. odoo-python
+#: code:addons/aspide_queue_job/models/external_company.py:0
+msgid "Retrieving data for Base CNPJ "
+msgstr "Recuperando dados para CNPJ Base "
+
+#. module: aspide_queue_job
+#. odoo-python
+#: code:addons/aspide_queue_job/models/entity.py:0
+msgid "Retrieving data for CNPJ "
+msgstr "Recuperando dados para CNPJ "
+
+#. module: aspide_queue_job
+#. odoo-python
+#: code:addons/aspide_queue_job/models/person.py:0
+msgid "Retrieving data for CPF "
+msgstr "Recuperando dados para CPF "
+
+#. module: aspide_queue_job
+#. odoo-python
+#: code:addons/aspide_queue_job/models/external_company.py:0
+msgid "Retrieving partner companies for Company "
+msgstr "Recuperando empresas de sócios para a empresa "
+
+#. module: aspide_queue_job
+#. odoo-python
+#: code:addons/aspide_queue_job/models/external_company.py:0
+msgid "Retrieving partners (person) for Company "
+msgstr "Recuperando sócios PF (multinível) para a empresa "
+
+#. module: aspide_queue_job
+#: model:ir.actions.server,name:aspide_queue_job.aspide_external_person_search_companies_action
+msgid "Search companies"
+msgstr "Pesquisar empresas"
+
+#. module: aspide_queue_job
+#: model:ir.actions.server,name:aspide_queue_job.aspide_external_company_partner_search_companies
+msgid "Search other companies of partners"
+msgstr "Pesquisar outras empresas dos dócios"
+
+#. module: aspide_queue_job
+#: model:ir.actions.server,name:aspide_queue_job.aspide_external_company_search_partners_person
+msgid "Search partners (person)"
+msgstr "Pesquisar sócios PF (recursivo)"
+
+#. module: aspide_queue_job
+#. odoo-python
+#: code:addons/aspide_queue_job/models/person.py:0
+msgid "Searching companies for person "
+msgstr "Pesquisando empresas de pessoa física "

@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-from datetime import datetime, timedelta
+
 from odoo import models, fields, api, _
+
 from .constants import PERSON_SITUATION
 
+from .bus_utils import send_bus_notification
 
 
 class aspide_external_person(models.Model):
@@ -44,7 +46,7 @@ class aspide_external_person(models.Model):
             rec.display_name = "%s - %s" % (rec.code, rec.name or '')
 
 
-    def retrieve(self):
+    def retrieve(self, user=False):
 
         try:
 
@@ -55,12 +57,24 @@ class aspide_external_person(models.Model):
             self.refresh_from_api(data)
 
             aspide.logout()
-        
+
+            if user:
+
+                send_bus_notification(self.env, user.partner_id, \
+                    subject = _('Retrieve person data'), \
+                    body = _('Retreive data for person %s finished') % (self.display_name), \
+                    type = 'success')
+
         except Exception as e:
 
             self.error_message = str(e)
 
-
+            if user:
+                
+                send_bus_notification(self.env, user.partner_id, \
+                    subject = _('Retrieve company data failed'), \
+                    body = _('Retreive data for person %s failed. Error: %s') % (self.display_name, str(e)), \
+                    type = 'danger')	
 
     def refresh_from_api(self, data):
 
@@ -101,7 +115,7 @@ class aspide_external_person(models.Model):
 
 
 
-    def search_companies(self):
+    def search_companies(self, user=False):
         
         if self.companies_searched:
             return
@@ -117,11 +131,24 @@ class aspide_external_person(models.Model):
             aspide.logout()
 
             self.companies_searched = True
-        
+
+            if user:
+
+                send_bus_notification(self.env, user.partner_id, \
+                    subject = _('Search companies for person'), \
+                    body = _('Search companies for person %s finished') % (self.display_name), \
+                    type = 'success')
+					        
         except Exception as e:
 
             self.error_message = str(e)
 
+            if user:
+                
+                send_bus_notification(self.env, user.partner_id, \
+                    subject = _('Search companies for person failed'), \
+                    body = _('Search companies for person %s failed. Error: %s') % (self.display_name, str(e)), \
+                    type = 'danger')					
 
 
 class aspide_external_person_company(models.Model):

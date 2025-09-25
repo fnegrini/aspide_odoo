@@ -3,6 +3,8 @@ from datetime import datetime, timedelta
 
 from odoo import models, fields, api, _
 
+from .bus_utils import send_bus_notification
+
 from .constants import \
     ENTITY_TYPE,\
     PARTNER_TYPE,\
@@ -189,83 +191,87 @@ class aspide_external_entity(models.Model):
 
     def refresh_from_api(self, entity_data):
 
-        self.code = entity_data['code']  
-        self.timestamp = entity_data['timestamp']
-        # self.timestamp = fields.Datetime.now()
-        self.error_message = False
-        self.name = entity_data['name']
-        self.type = entity_data['type']
-        self.name_adm = entity_data['name_adm']
+        fields = {}
+        
+        fields['code'] = entity_data['code']  
+        fields['timestamp'] = entity_data['timestamp']
+        # fields['timestamp'] = fields.Datetime.now()
+        fields['error_message'] = False
+        fields['name'] = entity_data['name']
+        fields['type'] = entity_data['type']
+        fields['name_adm'] = entity_data['name_adm']
 
-        self.situation = entity_data['situation']
-        self.situation_date = entity_data['situation_date']
-        self.situation_reason = entity_data['situation_reason']
+        fields['situation'] = entity_data['situation']
+        fields['situation_date'] = entity_data['situation_date']
+        fields['situation_reason'] = entity_data['situation_reason']
 
         if entity_data['situation_reason_id']:
 
-            self.situation_reason_id = entity_data['situation_reason_id']['id']
-            self.situation_reason_name = entity_data['situation_reason_id']['display_name']
+            fields['situation_reason_id'] = entity_data['situation_reason_id']['id']
+            fields['situation_reason_name'] = entity_data['situation_reason_id']['display_name']
 
-        self.foreign_city = entity_data['foreign_city']
-        self.country_code = entity_data['country_code']
-        self.country_name = entity_data['country_name']
-        #self.country_id = #TODO - Fetch local id
+        fields['foreign_city'] = entity_data['foreign_city']
+        fields['country_code'] = entity_data['country_code']
+        fields['country_name'] = entity_data['country_name']
+        #fields['country_id'] = #TODO - Fetch local id
         
-        self.legal_nature = entity_data['legal_nature']
+        fields['legal_nature'] = entity_data['legal_nature']
         
         if entity_data['legal_nature_id']:
 
-            self.legal_nature_id = entity_data['legal_nature_id']['id']
-            self.legal_nature_name = entity_data['legal_nature_id']['display_name']
+            fields['legal_nature_id'] = entity_data['legal_nature_id']['id']
+            fields['legal_nature_name'] = entity_data['legal_nature_id']['display_name']
 
-        self.start_date = entity_data['start_date']
-        self.cnae_code = entity_data['cnae_code']
+        fields['start_date'] = entity_data['start_date']
+        fields['cnae_code'] = entity_data['cnae_code']
 
         if entity_data['cnae_id']:
-            self.cnae_id = entity_data['cnae_id']['id']
-            self.cnae_name = entity_data['cnae_id']['display_name']
+            fields['cnae_id'] = entity_data['cnae_id']['id']
+            fields['cnae_name'] = entity_data['cnae_id']['display_name']
 
-        self.state_insc = entity_data['state_insc']
-        self.addr_type = entity_data['addr_type']
-        self.address = entity_data['address']
-        self.addr_number = entity_data['addr_number']
-        self.addr_comp = entity_data['addr_comp']
-        self.addr_district = entity_data['addr_district']
-        self.addr_zip_code = entity_data['addr_zip_code']
-        self.addr_state = entity_data['addr_state']
+        fields['state_insc'] = entity_data['state_insc']
+        fields['addr_type'] = entity_data['addr_type']
+        fields['address'] = entity_data['address']
+        fields['addr_number'] = entity_data['addr_number']
+        fields['addr_comp'] = entity_data['addr_comp']
+        fields['addr_district'] = entity_data['addr_district']
+        fields['addr_zip_code'] = entity_data['addr_zip_code']
+        fields['addr_state'] = entity_data['addr_state']
 
         if entity_data['state_id']:
-            self.addr_state_id = entity_data['state_id']['id']
-            self.addr_state_name = entity_data['state_id']['display_name']
+            fields['addr_state_id'] = entity_data['state_id']['id']
+            fields['addr_state_name'] = entity_data['state_id']['display_name']
 
-        self.addr_state_ibge = entity_data['addr_ibge_state']        
-        self.addr_city_code = entity_data['addr_city_code']
-        self.addr_city_ibge_code = entity_data['addr_city_ibge_code']
+        fields['addr_state_ibge'] = entity_data['addr_ibge_state']        
+        fields['addr_city_code'] = entity_data['addr_city_code']
+        fields['addr_city_ibge_code'] = entity_data['addr_city_ibge_code']
 
         if entity_data['city']:
 
-            self.addr_city_id = entity_data['city']['id']
-            self.addr_city_name = entity_data['city']['display_name']
+            fields['addr_city_id'] = entity_data['city']['id']
+            fields['addr_city_name'] = entity_data['city']['display_name']
 
-        self.phone1 = entity_data['phone1']
-        self.phone2 = entity_data['phone2']
-        self.fax = entity_data['fax']
-        self.email = entity_data['email']
+        fields['phone1'] = entity_data['phone1']
+        fields['phone2'] = entity_data['phone2']
+        fields['fax'] = entity_data['fax']
+        fields['email'] = entity_data['email']
 
-        self.partner_qualification = entity_data['partner_qualification']
+        fields['partner_qualification'] = entity_data['partner_qualification']
 
         if entity_data['partner_qualification_id']:
-            self.partner_qualification_id = entity_data['partner_qualification_id']['id']
-            self.partner_qualification_name = entity_data['partner_qualification_id']['display_name']
+            fields['partner_qualification_id'] = entity_data['partner_qualification_id']['id']
+            fields['partner_qualification_name'] = entity_data['partner_qualification_id']['display_name']
 
-        self.share_capital = entity_data['share_capital']
-        self.company_size = entity_data['company_size']
-        self.simple = entity_data['simple']
-        self.simple_start_date = entity_data['simple_start_date']
-        self.simple_end_date = entity_data['simple_end_date']
-        self.ind_mei = entity_data['ind_mei']
-        self.special_situation = entity_data['special_situation']
-        self.special_situation_date = entity_data['special_situation_date']
+        fields['share_capital'] = entity_data['share_capital']
+        fields['company_size'] = entity_data['company_size']
+        fields['simple'] = entity_data['simple']
+        fields['simple_start_date'] = entity_data['simple_start_date']
+        fields['simple_end_date'] = entity_data['simple_end_date']
+        fields['ind_mei'] = entity_data['ind_mei']
+        fields['special_situation'] = entity_data['special_situation']
+        fields['special_situation_date'] = entity_data['special_situation_date']
+
+        self.write(fields)
 
         self.refresh_partners_from_api(entity_data['partners'])
 
@@ -360,8 +366,9 @@ class aspide_external_entity(models.Model):
                 fields['legal_agent_qualification_name'] = partner['legal_agent_qualification_id']['display_name']
             
             self.partners.create(fields)
+            
 
-    def retrieve(self):
+    def retrieve(self, user=False):
         
         try:
 
@@ -372,15 +379,36 @@ class aspide_external_entity(models.Model):
             self.refresh_from_api(entity_data)
 
             aspide.logout()
+
+            if user:
+
+                send_bus_notification(self.env, user.partner_id, \
+                    subject = _('Retrieve entity data'), \
+                    body = _('Retreive data for Entity %s finished') % (self.display_name), \
+                    type = 'success')
         
         except Exception as e:
 
             self.error_message = str(e)
 
+            if user:
 
-    def fetch_external_company(self):
+                send_bus_notification(self.env, user.partner_id, \
+                    subject = _('Retrieve entity data failed'), \
+                    body = _('Retreive data for Entity %s failed. Error: %s') % (self.display_name, str(e)), \
+                    type = 'danger')
+
+
+    def fetch_external_company(self, user=False):
 
         self.external_company = self.external_company.check_external_company(self.code[:8], self.company_id)
+
+        if user:
+
+            send_bus_notification(self.env, user.partner_id, \
+                subject = _('Fetch company for entity'), \
+                body = _('Fetch company for Entity %s finished') % (self.display_name), \
+                type = 'success')
 
 
 class aspide_external_entity_partner(models.Model):

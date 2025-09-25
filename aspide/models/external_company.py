@@ -3,11 +3,13 @@ from datetime import datetime, timedelta
 
 from odoo import models, fields, api, _
 
-from .constants import ENTITY_TYPE, PARTNER_TYPE
+from .bus_utils import send_bus_notification
 
 from .constants import\
     ENTITY_SITUATION,\
-    COMPANY_SIZE
+    COMPANY_SIZE,\
+    ENTITY_TYPE,\
+    PARTNER_TYPE
 
 class aspide_external_company(models.Model):
     _name = 'aspide.external.company'
@@ -221,7 +223,7 @@ class aspide_external_company(models.Model):
                 new_partner.partner_companies.create(partner_company_fields)
 
             
-    def retrieve(self):
+    def retrieve(self, user=False):
 
         try:
 
@@ -232,10 +234,24 @@ class aspide_external_company(models.Model):
             self.refresh_from_api(company_data)
 
             aspide.logout()
-        
+
+            if user:
+
+                send_bus_notification(self.env, user.partner_id, \
+                    subject = _('Retrieve company data'), \
+                    body = _('Retreive data for company %s finished') % (self.display_name), \
+                    type = 'success')
+
         except Exception as e:
 
             self.error_message = str(e)
+
+            if user:
+                
+                send_bus_notification(self.env, user.partner_id, \
+                    subject = _('Retrieve company data failed'), \
+                    body = _('Retreive data for company %s failed. Error: %s') % (self.display_name, str(e)), \
+                    type = 'danger')
 
 
     @api.model
@@ -261,7 +277,7 @@ class aspide_external_company(models.Model):
             return external_company
 
 
-    def fetch_entity_for_branches(self):
+    def fetch_entity_for_branches(self, user=False):
 
         for branch in self.branches:
 
@@ -269,9 +285,14 @@ class aspide_external_company(models.Model):
 
                 branch.entity = branch.entity.check_entity(branch.code, self.company_id)
 
+        if user:
 
+            send_bus_notification(self.env, user.partner_id, \
+                subject = _('Fetch entities of company'), \
+                body = _('Fetch entities of company %s finished') % (self.display_name), \
+                type = 'success')
 
-    def fetch_regimes(self):
+    def fetch_regimes(self, user=False):
 
         if self.regime_fetched:
 
@@ -289,9 +310,23 @@ class aspide_external_company(models.Model):
 
             aspide.logout()
 
+            if user:
+
+                send_bus_notification(self.env, user.partner_id, \
+                    subject = _('Fetch company regimes'), \
+                    body = _('Fetch regimes of company %s finished') % (self.display_name), \
+                    type = 'success')
+
         except Exception as e:
 
             self.error_message = str(e)
+
+            if user:
+                
+                send_bus_notification(self.env, user.partner_id, \
+                    subject = _('Fetch company regimes failed'), \
+                    body = _('Fetch regimes of company %s failed. Error: %s') % (self.display_name, str(e)), \
+                    type = 'danger')
 
 
     def refresh_regimes_from_api(self, regimes):
@@ -313,7 +348,7 @@ class aspide_external_company(models.Model):
         self.regime_fetched = len(regimes) > 0
 
 
-    def partner_search_companies(self):
+    def partner_search_companies(self, user=False):
 
         if self.partner_companies_fetched:
 
@@ -333,12 +368,25 @@ class aspide_external_company(models.Model):
 
             aspide.logout()
 
+            if user:
+
+                send_bus_notification(self.env, user.partner_id, \
+                    subject = _('Search partner companies'), \
+                    body = _('Search partner companies of company %s finished') % (self.display_name), \
+                    type = 'success')
+
         except Exception as e:
 
             self.error_message = str(e)
 
+            if user:
+                
+                send_bus_notification(self.env, user.partner_id, \
+                    subject = _('Search partner companies failed'), \
+                    body = _('Search partner companies of company %s failed. Error: %s') % (self.display_name, str(e)), \
+                    type = 'danger')
 
-    def search_partners_person(self):
+    def search_partners_person(self, user=False):
 
         if self.partners_person_fetched:
 
@@ -356,10 +404,23 @@ class aspide_external_company(models.Model):
 
             aspide.logout()
 
+            if user:
+
+                send_bus_notification(self.env, user.partner_id, \
+                    subject = _('Search partners (person)'), \
+                    body = _('Search partners (person) for company %s finished') % (self.display_name), \
+                    type = 'success')
+
         except Exception as e:
 
             self.error_message = str(e)
 
+            if user:
+                
+                send_bus_notification(self.env, user.partner_id, \
+                    subject = _('Search partners (person) failed'), \
+                    body = _('Search partners (person) for company %s failed. Error: %s') % (self.display_name, str(e)), \
+                    type = 'danger')
 
 
     def refresh_partners_person_from_api(self, partners_person):

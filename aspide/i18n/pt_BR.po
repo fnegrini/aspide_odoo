@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-25 11:45+0000\n"
-"PO-Revision-Date: 2025-09-25 09:15-0300\n"
+"POT-Creation-Date: 2025-09-25 14:05+0000\n"
+"PO-Revision-Date: 2025-09-25 11:09-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -117,14 +117,14 @@ msgstr "Estabelecimento"
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__cnae_code
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__cnae_code
 msgid "CNAE"
-msgstr "CNAE"
+msgstr ""
 
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__cnae_id
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__cnae_id
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_cnae__cnae_id
 msgid "CNAE (Id)"
-msgstr "CNAE (Id)"
+msgstr ""
 
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__cnae_name
@@ -141,32 +141,32 @@ msgstr "Código CNAE"
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__code
 msgid "CNPJ"
-msgstr "CNPJ"
+msgstr ""
 
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_company_regime__scp_code
 msgid "CNPJ SCP"
-msgstr "CNPJ SCP"
+msgstr ""
 
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__partner_code
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_person__code
 msgid "CPF"
-msgstr "CPF"
+msgstr ""
 
 #. module: aspide
 #. odoo-python
 #: code:addons/aspide/models/constants.py:0
 #: model:ir.model.fields.selection,name:aspide.selection__aspide_external_person__situation__9
 msgid "Cancelada de Ofício"
-msgstr "Cancelada de Ofício"
+msgstr ""
 
 #. module: aspide
 #. odoo-python
 #: code:addons/aspide/models/constants.py:0
 #: model:ir.model.fields.selection,name:aspide.selection__aspide_external_person__situation__5
 msgid "Cancelada por Multiplicidade"
-msgstr "Cancelada por Multiplicidade"
+msgstr ""
 
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__addr_city_id
@@ -391,12 +391,12 @@ msgstr "Bairro"
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__email
 msgid "E-mail"
-msgstr "E-mail"
+msgstr ""
 
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__enabled
 msgid "Enabled"
-msgstr "Ativo"
+msgstr "Ativado"
 
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_company__branches
@@ -546,7 +546,7 @@ msgstr "Extraído em"
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__fax
 msgid "Fax"
-msgstr "Fax"
+msgstr ""
 
 #. module: aspide
 #: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_partner_company_form
@@ -575,14 +575,62 @@ msgid "Fetch company"
 msgstr "Buscar empresa"
 
 #. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/entity.py:0
+msgid "Fetch company for Entity %s finished"
+msgstr "Buscar empresa para a estabelecimento %s concluída"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/entity.py:0
+msgid "Fetch company for entity"
+msgstr "Buscar empresa para estabelecimento"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Fetch company regimes"
+msgstr "Buscar regimes de empresa"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Fetch company regimes failed"
+msgstr "Falha na busca por regimes da empresa"
+
+#. module: aspide
 #: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
 msgid "Fetch entities"
 msgstr "Buscar estabelecimentos"
 
 #. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Fetch entities of company"
+msgstr "Buscar estabelecimentos da empresa"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Fetch entities of company %s finished"
+msgstr "Buscar estabelecimentos da empresa %s concluídas"
+
+#. module: aspide
 #: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
 msgid "Fetch regimes"
 msgstr "Buscar regimes"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Fetch regimes of company %s failed. Error: %s"
+msgstr "Falha na busca de regimes da empresa %s. Erro: %s"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Fetch regimes of company %s finished"
+msgstr "Buscar regimes de da empresa %s concluída"
 
 #. module: aspide
 #: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_partner_form
@@ -628,7 +676,7 @@ msgstr "Data de fundação"
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_person__id
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_company__write_uid
@@ -896,7 +944,7 @@ msgstr "Empresas dos sócios buscadas"
 #: code:addons/aspide/models/constants.py:0
 #: model:ir.model.fields.selection,name:aspide.selection__aspide_external_person__situation__4
 msgid "Pendente de Regularização"
-msgstr "Pendente de Regularização"
+msgstr ""
 
 #. module: aspide
 #. odoo-python
@@ -951,7 +999,7 @@ msgstr "Qualificação (Nome)"
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_company_regime__regime
 msgid "Regime"
-msgstr "Regime"
+msgstr ""
 
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_company__regime_fetched
@@ -962,14 +1010,50 @@ msgstr "Dados de regime recuperados"
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_company__regimes
 #: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
 msgid "Regimes"
-msgstr "Regimes"
+msgstr ""
 
 #. module: aspide
 #. odoo-python
 #: code:addons/aspide/models/constants.py:0
 #: model:ir.model.fields.selection,name:aspide.selection__aspide_external_person__situation__0
 msgid "Regular"
-msgstr "Regular"
+msgstr ""
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/entity.py:0
+msgid "Retreive data for Entity %s failed. Error: %s"
+msgstr "Falha na recuperação de dados para estabelecimento %s. Erro: %s"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/entity.py:0
+msgid "Retreive data for Entity %s finished"
+msgstr "Recuperação dados para estabelecimento %s concluída"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Retreive data for company %s failed. Error: %s"
+msgstr "Falha na recuperação de dados da empresa %s. Erro: %s"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Retreive data for company %s finished"
+msgstr "Recuperação de dados para emrresa %s concluída"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/person.py:0
+msgid "Retreive data for person %s failed. Error: %s"
+msgstr "Falha na recuperação de dados para pessoa física %s. Erro: %s"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/person.py:0
+msgid "Retreive data for person %s finished"
+msgstr "Recuperação de dados da pessoa física %s concluía"
 
 #. module: aspide
 #: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_form
@@ -977,10 +1061,41 @@ msgid "Retrieve"
 msgstr "Recuperar"
 
 #. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Retrieve company data"
+msgstr "Recuperar dados da empresa"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+#: code:addons/aspide/models/person.py:0
+msgid "Retrieve company data failed"
+msgstr "Falha na recuperação de dados da empresa"
+
+#. module: aspide
 #: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
 #: model_terms:ir.ui.view,arch_db:aspide.aspide_external_person_form
 msgid "Retrieve data"
 msgstr "Recuperar dados"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/entity.py:0
+msgid "Retrieve entity data"
+msgstr "Recuperar dados do estabelecimento"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/entity.py:0
+msgid "Retrieve entity data failed"
+msgstr "Falha na recuperação de dados do estabelecimento"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/person.py:0
+msgid "Retrieve person data"
+msgstr "Recuperar dados da pessoa física"
 
 #. module: aspide
 #. odoo-python
@@ -1004,7 +1119,6 @@ msgstr "IE Status"
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__type
 #: model:ir.model.fields,help:aspide.field_aspide_external_entity_ie__type
-#, fuzzy
 msgid "SI Type"
 msgstr "Tipo IE"
 
@@ -1019,14 +1133,82 @@ msgid "Search companies done"
 msgstr "Pesquisa empresas concluída"
 
 #. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/person.py:0
+msgid "Search companies for person"
+msgstr "Pesquisar empresas de pessoa física"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/person.py:0
+msgid "Search companies for person %s failed. Error: %s"
+msgstr "Falha na pesquisa de empresas para pessoa física %s. Erro: %s"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/person.py:0
+msgid "Search companies for person %s finished"
+msgstr "Pesqusa de empresas da pessoa física %s concluída"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/person.py:0
+msgid "Search companies for person failed"
+msgstr "Falha na pesquisa de empresas para pessoa física"
+
+#. module: aspide
 #: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
 msgid "Search other companies of partners"
 msgstr "Pesquisar outras empresas dos dócios"
 
 #. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Search partner companies"
+msgstr "Pesquisar empresas de parceiros"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Search partner companies failed"
+msgstr "Falha na pesquisa de empresas de parceiros"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Search partner companies of company %s failed. Error: %s"
+msgstr "Falha na pesquisa de empresas de parceiros da empresa %s. Erro: %s"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Search partner companies of company %s finished"
+msgstr "Pesquisa de empresas de parceiros da empresa %s concluída"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
 #: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
 msgid "Search partners (person)"
 msgstr "Pesquisar sócios PF (recursivo)"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Search partners (person) failed"
+msgstr "Falha na pesquisar sócios PF (recursivo)"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Search partners (person) for company %s failed. Error: %s"
+msgstr "Falha na pesquisa de sócios PF (recursivo) para empresa %s. Erro: %s"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Search partners (person) for company %s finished"
+msgstr "Pesquisa de sócios PF (recursivo) para empresa %s concluída"
 
 #. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__cnaes
@@ -1221,7 +1403,7 @@ msgstr "CEP"
 #. module: aspide
 #: model:ir.model.fields,help:aspide.field_res_company__aspide_database
 msgid "aspide"
-msgstr "aspide"
+msgstr ""
 
 #. module: aspide
 #: model:ir.model.fields,help:aspide.field_res_company__aspide_user

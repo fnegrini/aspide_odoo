@@ -1,0 +1,45 @@
+<odoo>
+  <data>
+ 
+    <record id="aspide_external_company_retrieve_action" model="ir.actions.server">
+        <field name="name">Retrieve</field>
+        <field name="model_id" ref="model_aspide_external_company"/>
+        <field name="binding_model_id" ref="model_aspide_external_company"/>
+        <field name="state">code</field>
+        <field name="code">records.action_retrieve()</field>
+    </record>
+
+    <record id="aspide_external_company_fetch_branches_action" model="ir.actions.server">
+        <field name="name">Fetch entities</field>
+        <field name="model_id" ref="model_aspide_external_company"/>
+        <field name="binding_model_id" ref="model_aspide_external_company"/>
+        <field name="state">code</field>
+        <field name="code">records.action_fetch_entity_for_branches()</field>
+    </record>
+
+    <record id="aspide_external_company_fetch_regimes_action" model="ir.actions.server">
+        <field name="name">Fetch Regimes</field>
+        <field name="model_id" ref="model_aspide_external_company"/>
+        <field name="binding_model_id" ref="model_aspide_external_company"/>
+        <field name="state">code</field>
+        <field name="code">records.action_fetch_regimes()</field>
+    </record>
+	
+    <record id="aspide_external_company_partner_search_companies" model="ir.actions.server">
+        <field name="name">Search other companies of partners</field>
+        <field name="model_id" ref="model_aspide_external_company"/>
+        <field name="binding_model_id" ref="model_aspide_external_company"/>
+        <field name="state">code</field>
+        <field name="code">records.action_partner_search_companies()</field>
+    </record>
+
+	  <record id="aspide_external_company_search_partners_person" model="ir.actions.server">
+        <field name="name">Search partners (person)</field>
+        <field name="model_id" ref="model_aspide_external_company"/>
+        <field name="binding_model_id" ref="model_aspide_external_company"/>
+        <field name="state">code</field>
+        <field name="code">records.action_search_partners_person()</field>
+    </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+  
+     <!-- Action -->
+    <record id="aspide_external_entity_retrieve_action" model="ir.actions.server">
+        <field name="name">Retrieve</field>
+        <field name="model_id" ref="model_aspide_external_entity"/>
+        <field name="binding_model_id" ref="model_aspide_external_entity"/>
+        <field name="state">code</field>
+        <field name="code">records.action_retrieve()</field>
+    </record>
+
+
+    <record id="aspide_external_entity_fetch_external_company_action" model="ir.actions.server">
+        <field name="name">Fetch company</field>
+        <field name="model_id" ref="model_aspide_external_entity"/>
+        <field name="binding_model_id" ref="model_aspide_external_entity"/>
+        <field name="state">code</field>
+        <field name="code">records.action_fetch_external_company()</field>
+    </record>
+
+  </data>
+</odoo>
