@@ -34,24 +34,12 @@
 					<group readonly="1">
 						<field name="code" required="1" readonly="timestamp"/>
 						<field name="name" readonly="1"/>
+						<field name="legal_nature_name" readonly="1"/>
 					</group>
-					<group>
-						<label for="legal_nature"/>
-						<div>
-							<field name="legal_nature" class="oe_inline" readonly="1"/>
-							<field name="legal_nature_name" class="oe_inline" readonly="1"/>
-						</div>
-					</group>	
 					<notebook name="aspide_sub">
 		            	<page string="Classification">
-							<group>
-								<label for="partner_qualification"/>
-								<div>
-									<field name="partner_qualification" class="oe_inline" readonly="1"/>
-									<field name="partner_qualification_name" class="oe_inline" readonly="1"/>
-								</div>
-							</group>							
 							<group readonly="1">
+								<field name="partner_qualification_name" readonly="1"/>
 								<field name="share_capital" readonly="1"/>
 								<field name="company_size" readonly="1"/>
 								<field name="simple" readonly="1"/>
@@ -110,7 +98,6 @@
                 <field name="type" readonly="1"/>
                 <field name="situation" readonly="1"/>
 				<field name="situation_date" readonly="1"/>
-				<field name="cnae_code" readonly="1"/>
 				<field name="cnae_name" readonly="1"/>
 				<field name="entity" readonly="1"/>
             </list>
@@ -135,17 +122,9 @@
 						<field name="founded" readonly="1"/>
 						<field name="situation" readonly="1"/>
 						<field name="situation_date" readonly="1"/>
-					</group>
-					<group>
-						<label for="cnae_code"/>
-						<div>
-							<field name="cnae_code" class="oe_inline" readonly="1"/>
-							<field name="cnae_name" class="oe_inline" readonly="1"/>
-						</div>
-					</group>
-					<group>
+						<field name="cnae_name" readonly="1"/>
 						<field name="entity" readonly="1"/>
-					</group>									
+					</group>
 				</sheet>
             </form>
         </field>
@@ -159,6 +138,7 @@
             	<field name="type" readonly="1"/>
                 <field name="code" readonly="1"/>
                 <field name="name" readonly="1"/>
+				<field name="qualification_name" readonly="1"/>
             </list>
         </field>
 	</record>
@@ -181,20 +161,8 @@
 					<notebook name="aspide_sub">
 		            	<page string="Classification">
 							<group>
-								<label for="qualification"/>
-								<div>
-									<field name="qualification" class="oe_inline" readonly="1"/>
-									<field name="qualification_name" class="oe_inline" readonly="1"/>
-								</div>
-							</group>
-							<group>
-								<label for="agegroup"/>
-								<div>
-									<field name="agegroup" class="oe_inline" readonly="1"/>
-									<field name="agegroup_name" class="oe_inline" readonly="1"/>
-								</div>
-							</group>													
-							<group>
+								<field name="qualification_name" readonly="1"/>
+								<field name="agegroup_name" readonly="1"/>
 								<field name="share_percent" readonly="1"/>
 								<field name="start_date" readonly="1"/>
 							</group>
@@ -210,14 +178,8 @@
 							<group>
 								<field name="legal_agent_code" readonly="1"/>
 								<field name="legal_agent_name" readonly="1"/>
+								<field name="legal_agent_qualification_name" readonly="1"/>
 							</group>
-							<group>
-								<label for="legal_agent_qualification"/>
-								<div>
-									<field name="legal_agent_qualification" class="oe_inline" readonly="1"/>
-									<field name="legal_agent_qualification_name" class="oe_inline" readonly="1"/>
-								</div>
-							</group>								
 						</page>          
 		            	<page string="Other companies">
 					        <group>

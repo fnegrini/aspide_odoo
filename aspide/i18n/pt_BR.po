@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-19 18:21+0000\n"
-"PO-Revision-Date: 2025-09-23 11:50-0300\n"
+"POT-Creation-Date: 2025-09-25 11:45+0000\n"
+"PO-Revision-Date: 2025-09-25 09:15-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -18,14 +18,239 @@ msgstr ""
 "X-Generator: Poedit 3.7\n"
 
 #. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_form
+msgid "--&gt;"
+msgstr ""
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_company_branch__situation__02
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity__situation__02
+msgid "Active"
+msgstr "Ativo"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__address
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_form
+msgid "Address"
+msgstr "Endereço"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__addr_comp
+msgid "Address Complement"
+msgstr "Complemento"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__addr_number
+msgid "Address Number"
+msgstr "Número"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__addr_type
+msgid "Address Type"
+msgstr "Tipo de Endereço"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__name_adm
+msgid "Administrative Name"
+msgstr "Nome Administrativo"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__agegroup
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__agegroup
+msgid "Age Group"
+msgstr "Faixa etária"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__agegroup_id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__agegroup_id
+msgid "Age Group (Id)"
+msgstr "Faixa etária (Id)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__agegroup_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__agegroup_name
+msgid "Age Group (Name)"
+msgstr "Faixa etária (nome)"
+
+#. module: aspide
 #: model:res.groups,name:aspide.group_aspide_entity
 msgid "Aspide entities"
-msgstr "ÁSPIDE - Empresas"
+msgstr "ÁSPIDE - Fontes externas"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__code
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_company__code
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__code
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__partner_external_company_code
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__code
+msgid "Base CNPJ"
+msgstr "Raiz CNPJ"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__birth
+msgid "Birth Date"
+msgstr "Data de Nascimento"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity_ie__status__2
+msgid "Blocked as UF receiver"
+msgstr "Bloqueado como receptor UF"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_regime__bookkeeping_count
+msgid "Bookkeeping count"
+msgstr "Qtde. escriturações"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_company_branch__type__2
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity__type__2
+msgid "Branch"
+msgstr "Estabelecimento"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__cnae_code
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__cnae_code
+msgid "CNAE"
+msgstr "CNAE"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__cnae_id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__cnae_id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_cnae__cnae_id
+msgid "CNAE (Id)"
+msgstr "CNAE (Id)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__cnae_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__cnae_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_cnae__cnae_name
+msgid "CNAE (Name)"
+msgstr "CNAE (Nome)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_cnae__code
+msgid "CNAE Code"
+msgstr "Código CNAE"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__code
+msgid "CNPJ"
+msgstr "CNPJ"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_regime__scp_code
+msgid "CNPJ SCP"
+msgstr "CNPJ SCP"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__partner_code
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__code
+msgid "CPF"
+msgstr "CPF"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_person__situation__9
+msgid "Cancelada de Ofício"
+msgstr "Cancelada de Ofício"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_person__situation__5
+msgid "Cancelada por Multiplicidade"
+msgstr "Cancelada por Multiplicidade"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__addr_city_id
+msgid "City (Id)"
+msgstr "Cidade (Id)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__addr_city_ibge_code
+msgid "City IBGE Code"
+msgstr "Cidade - Código do IBGE"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__addr_city_name
+msgid "City Name"
+msgstr "Cidade - Nome"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__addr_city_code
+msgid "City TOM Code"
+msgstr "Cidade - Código TOM"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_partner_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_partner_form
+msgid "Classification"
+msgstr "Classificação"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_company_branch__situation__08
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity__situation__08
+msgid "Closed"
+msgstr "Fechado"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__code
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__code
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__code
+msgid "Code"
+msgstr "Código"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_form
+msgid "Communication"
+msgstr "Comunicação"
 
 #. module: aspide
 #: model:ir.model,name:aspide.model_res_company
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__partner_companies
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__companies
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_person_form
 msgid "Companies"
 msgstr "Empresas"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__company_id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__external_company
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_company__external_company
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__external_company
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__external_company
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_regime__external_company
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__company_id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__partner_external_company_name
+msgid "Company Name"
+msgstr "Nome da Empresa"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__company_size
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__company_size
+msgid "Company Size"
+msgstr "Porte de Empresa"
+
+#. module: aspide
+#: model:ir.model.constraint,message:aspide.constraint_aspide_external_company_unique_external_company
+msgid "Company must be unique"
+msgstr "A empresa deve ser única"
 
 #. module: aspide
 #. odoo-python
@@ -40,14 +265,963 @@ msgid "Connection success!"
 msgstr "Sucesso de conexão!"
 
 #. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__country_id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__country_id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__country_id
+msgid "Country"
+msgstr "País"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__country_code
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__country_code
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__country_code
+msgid "Country Code"
+msgstr "Código do País"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__country_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__country_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__country_name
+msgid "Country Name"
+msgstr "Nome do País"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__addr_state
+msgid "Country state"
+msgstr "UF"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__addr_state_id
+msgid "Country state (Id)"
+msgstr "UF (Id)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__addr_state_name
+msgid "Country state (Name)"
+msgstr "UF (Nome)"
+
+#. module: aspide
+#: model_terms:ir.actions.act_window,help:aspide.aspide_external_company_action
+msgid "Create a new External Company"
+msgstr "Criar uma nova fonte oficial de emrpesa"
+
+#. module: aspide
+#: model_terms:ir.actions.act_window,help:aspide.aspide_external_entity_action
+msgid "Create a new External Entity"
+msgstr "Criar uma nova fonte oficial de estabelecimento"
+
+#. module: aspide
+#: model_terms:ir.actions.act_window,help:aspide.aspide_external_person_action
+msgid "Create a new External Person"
+msgstr "Criar uma nova fonte oficial de pessoa física"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__create_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__create_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_company__create_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__create_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__create_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__create_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_regime__create_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__create_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_cnae__create_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__create_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__create_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__create_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__create_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__create_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_company__create_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__create_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__create_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__create_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_regime__create_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__create_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_cnae__create_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__create_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__create_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__create_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__date
+msgid "Date"
+msgstr "Data"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__death
+msgid "Death"
+msgstr "Óbito"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity_ie__status__3
+msgid "Denied operation as UF receiver"
+msgstr "Operação negada como receptor UF"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__display_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__display_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_company__display_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__display_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__display_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__display_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_regime__display_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__display_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_cnae__display_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__display_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__display_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__display_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__display_name
+msgid "Display Name"
+msgstr "Nome exibido"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__addr_district
+msgid "District"
+msgstr "Bairro"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__email
+msgid "E-mail"
+msgstr "E-mail"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__enabled
+msgid "Enabled"
+msgstr "Ativo"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__branches
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
+msgid "Entities"
+msgstr "Estabelecimentos"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__entity
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_cnae__entity
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__entity
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__entity
+msgid "Entity"
+msgstr "Estabelecimento"
+
+#. module: aspide
+#: model:ir.model.constraint,message:aspide.constraint_aspide_external_entity_unique_entity
+msgid "Entity must be unique"
+msgstr "A Entidade deve ser exclusiva"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__error_message
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__error_message
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__error_message
+msgid "Error Message"
+msgstr "Mensagem de Erro"
+
+#. module: aspide
+#: model:ir.actions.act_window,name:aspide.aspide_external_company_action
+#: model:ir.model,name:aspide.model_aspide_external_company
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__external_company
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__external_company
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__external_company
+#: model:ir.ui.menu,name:aspide.menu_aspide_external_company
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_tree
+msgid "External Company"
+msgstr "Empresa"
+
+#. module: aspide
+#: model:ir.model,name:aspide.model_aspide_external_company_branch
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_branch_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_branch_tree
+msgid "External Company - Entity"
+msgstr "Empresa - Entidade"
+
+#. module: aspide
+#: model:ir.model,name:aspide.model_aspide_external_company_partner
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_partner_company_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_partner_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_partner_tree
+msgid "External Company - Partner"
+msgstr "Empresa - Sócio"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_partner_person_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_partner_person_tree
+msgid "External Company - Partner (Person)"
+msgstr "Empresa - Sócio PF (multinível)"
+
+#. module: aspide
+#: model:ir.model,name:aspide.model_aspide_external_company_company
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_company_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_company_tree
+msgid "External Company - Partner Company"
+msgstr "Empresa - Empresas do sócio"
+
+#. module: aspide
+#: model:ir.model,name:aspide.model_aspide_external_company_partner_company
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_partner_company_tree
+msgid "External Company - Partner company"
+msgstr "Empresa - Empresas do sócio"
+
+#. module: aspide
+#: model:ir.model,name:aspide.model_aspide_external_company_partner_person
+msgid "External Company - Partner person"
+msgstr "Empresa - Sócio PF"
+
+#. module: aspide
+#: model:ir.model,name:aspide.model_aspide_external_company_regime
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_regime_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_regime_tree
+msgid "External Company - Regime"
+msgstr "Empresa - Regime"
+
+#. module: aspide
+#: model:ir.actions.act_window,name:aspide.aspide_external_entity_action
+#: model:ir.model,name:aspide.model_aspide_external_entity
+#: model:ir.ui.menu,name:aspide.menu_aspide_external_entity
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_tree
+msgid "External Entity"
+msgstr "Estabelecimento"
+
+#. module: aspide
+#: model:ir.model,name:aspide.model_aspide_external_entity_partner
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_partner_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_partner_tree
+msgid "External Entity - Partner"
+msgstr "Estabelecimento - Sócio"
+
+#. module: aspide
+#: model:ir.model,name:aspide.model_aspide_external_entity_cnae
+msgid "External Entity - Secondary CNAE"
+msgstr "Estabelecimento - CNAE Secundária"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_cnae_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_cnae_tree
+msgid "External Entity - Secondary CNAEs"
+msgstr "Estabelecimento - CNAEs Secundários"
+
+#. module: aspide
+#: model:ir.model,name:aspide.model_aspide_external_entity_ie
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_ie_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_ie_tree
+msgid "External Entity - State Insc"
+msgstr "Estabelecimento - Insc. Est"
+
+#. module: aspide
+#: model:ir.actions.act_window,name:aspide.aspide_external_person_action
+#: model:ir.model,name:aspide.model_aspide_external_person
+#: model:ir.ui.menu,name:aspide.menu_aspide_external_person
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_person_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_person_tree
+msgid "External Person"
+msgstr "Pessoa física"
+
+#. module: aspide
+#: model:ir.model,name:aspide.model_aspide_external_person_company
+msgid "External Person - Partner company"
+msgstr "Pessoa Física - Empresa"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_person_company_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_person_company_tree
+msgid "External Person company"
+msgstr "Empresa de pessoa física"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__timestamp
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__timestamp
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__timestamp
+msgid "Extracted at"
+msgstr "Extraído em"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__fax
+msgid "Fax"
+msgstr "Fax"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_partner_company_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_person_company_form
+msgid "Fetch Company"
+msgstr "Buscar empresa"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_branch_form
+msgid "Fetch Entity"
+msgstr "Buscar Estabelecimento"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_company_form
+msgid "Fetch Partner Company"
+msgstr "Buscar Empresa dos Sócios"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_partner_person_form
+msgid "Fetch Person Company"
+msgstr "Buscar Pessoa de Pessoa Física"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_form
+msgid "Fetch company"
+msgstr "Buscar empresa"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
+msgid "Fetch entities"
+msgstr "Buscar estabelecimentos"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
+msgid "Fetch regimes"
+msgstr "Buscar regimes"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_partner_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_partner_form
+msgid "Foreign Address"
+msgstr "Endereço Estrangeiro"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_form
+msgid "Foreign Location"
+msgstr "Localização Estrangeira"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__foreign_city
+msgid "Foreign city"
+msgstr "Cidade estrangeira"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_company_partner__type__3
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity_partner__type__3
+msgid "Foreigner"
+msgstr "Estrangeiro"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__founded
+msgid "Foundation Date"
+msgstr "Data de fundação"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_company__id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_regime__id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_cnae__id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__id
+msgid "ID"
+msgstr "ID"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__write_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__write_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_company__write_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__write_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__write_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__write_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_regime__write_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__write_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_cnae__write_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__write_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__write_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__write_uid
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__write_uid
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__write_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__write_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_company__write_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__write_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__write_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__write_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_regime__write_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__write_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_cnae__write_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__write_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__write_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__write_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__write_date
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_partner_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_partner_form
+msgid "Legal Agent"
+msgstr "Agente Jurídico"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__legal_agent_code
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__legal_agent_code
+msgid "Legal Agent Code"
+msgstr "Código do Agente Jurídico"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__legal_agent_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__legal_agent_name
+msgid "Legal Agent Name"
+msgstr "Nome do Agente Legal"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__legal_agent_qualification
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__legal_agent_qualification
+msgid "Legal Agent Qualification"
+msgstr "Qualificação de Agente Jurídico"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__legal_agent_qualification_id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__legal_agent_qualification_id
+msgid "Legal Agent Qualification (Id)"
+msgstr "Qualificação de Agente Jurídico (Id)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__legal_agent_qualification_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__legal_agent_qualification_name
+msgid "Legal Agent Qualification (Name)"
+msgstr "Qualificação de Agente Jurídico (Nome)"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_company_partner__type__1
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity_partner__type__1
+msgid "Legal Entity"
+msgstr "Estabelecimento"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__legal_nature
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__legal_nature
+msgid "Legal Nature"
+msgstr "Natureza jurídica"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__legal_nature_id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__legal_nature_id
+msgid "Legal Nature (Id)"
+msgstr "Natureza jurídica (id)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__legal_nature_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__legal_nature_name
+msgid "Legal Nature (Name)"
+msgstr "Natureza Jurídica (Nome)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__level
+msgid "Level"
+msgstr "Nível"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__ind_mei
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__ind_mei
+msgid "MEI indicator"
+msgstr "Indicador MEI"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_company_branch__type__1
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity__type__1
+msgid "Main Company"
+msgstr "Empresa Principal"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_company__name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity_ie__status__1
+msgid "None restriction"
+msgstr "Nenhuma restrição"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity_ie__type__1
+msgid "Normal SI"
+msgstr "IE Normal"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity_ie__type__3
+msgid "Not contributor SI"
+msgstr "IE Não contribuinte"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_company__company_size__00
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity__company_size__00
+msgid "Not set"
+msgstr "Não configurado"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_person__situation__8
+msgid "Nula"
+msgstr ""
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_company_branch__situation__01
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity__situation__01
+msgid "Null"
+msgstr "Nulo"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_partner_form
+msgid "Other companies"
+msgstr "Outras empresas"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_company__company_size__05
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity__company_size__05
+msgid "Others"
+msgstr "Outros"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__partner
+msgid "Partner"
+msgstr "Sócio"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__partner_companies
+msgid "Partner Companies"
+msgstr "Empresas dos sócios"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_company__partner_external_company
+msgid "Partner Company"
+msgstr "Empresa do Sócio"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__partner_name
+msgid "Partner Name"
+msgstr "Nome do sócio"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__partner_qualification
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__qualification
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__partner_qualification
+msgid "Partner Qualification"
+msgstr "Qualificação do sócio"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__partner_qualification_id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__qualification_id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__partner_qualification_id
+msgid "Partner Qualification (Id)"
+msgstr "Qualificação do sócio (Id)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__partner_qualification_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__qualification_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__partner_qualification_name
+msgid "Partner Qualification (Name)"
+msgstr "Qualificação de sócio (nome)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__type
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__type
+msgid "Partner Type"
+msgstr "Tipo de sócio"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
+msgid "Partner companies"
+msgstr "Empresas dos sócios"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__partners
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__partners
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_form
+msgid "Partners"
+msgstr "Sócios"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__partners_person
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
+msgid "Partners (Person)"
+msgstr "Sócios PF (multinível)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__partners_person_fetched
+msgid "Partners (person) fetched"
+msgstr "Sócios PF recuperados"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__partner_companies_fetched
+msgid "Partners companies fetched"
+msgstr "Empresas dos sócios buscadas"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_person__situation__4
+msgid "Pendente de Regularização"
+msgstr "Pendente de Regularização"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__person
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_company_partner__type__2
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity_partner__type__2
+msgid "Person"
+msgstr "Pessoa física"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__partner_external_company
+msgid "Person Company"
+msgstr "Empresa Pessoa"
+
+#. module: aspide
+#: model:ir.model.constraint,message:aspide.constraint_aspide_external_person_unique_entity
+msgid "Person must be unique"
+msgstr "Pessoa física deve ser única"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__phone1
+msgid "Phone 1"
+msgstr "Telefone 1"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__phone2
+msgid "Phone 2"
+msgstr "Telefone 2"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__qualification
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__qualification
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__qualification
+msgid "Qualification"
+msgstr "Qualificações"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__qualification_id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__qualification_id
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__qualification_id
+msgid "Qualification (Id)"
+msgstr "Qualificação (Id)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__qualification_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__qualification_name
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__qualification_name
+msgid "Qualification (Name)"
+msgstr "Qualificação (Nome)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_regime__regime
+msgid "Regime"
+msgstr "Regime"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__regime_fetched
+msgid "Regime data fetched"
+msgstr "Dados de regime recuperados"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__regimes
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
+msgid "Regimes"
+msgstr "Regimes"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_person__situation__0
+msgid "Regular"
+msgstr "Regular"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_form
+msgid "Retrieve"
+msgstr "Recuperar"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_person_form
+msgid "Retrieve data"
+msgstr "Recuperar dados"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity_ie__type__4
+msgid "Rural Producer SI"
+msgstr "IE Produtor Rural"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__state_insc
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__code
+msgid "SI"
+msgstr "IE"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__status
+#: model:ir.model.fields,help:aspide.field_aspide_external_entity_ie__status
+msgid "SI Status"
+msgstr "IE Status"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__type
+#: model:ir.model.fields,help:aspide.field_aspide_external_entity_ie__type
+#, fuzzy
+msgid "SI Type"
+msgstr "Tipo IE"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_person_form
+msgid "Search companies"
+msgstr "Pesquisar empresas"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__companies_searched
+msgid "Search companies done"
+msgstr "Pesquisa empresas concluída"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
+msgid "Search other companies of partners"
+msgstr "Pesquisar outras empresas dos dócios"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_company_form
+msgid "Search partners (person)"
+msgstr "Pesquisar sócios PF (recursivo)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__cnaes
+msgid "Secondary CNAES"
+msgstr "CNAEs Secundários"
+
+#. module: aspide
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_form
+msgid "Secondary CNAEs"
+msgstr "CNAEs secundários"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__share_capital
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__share_capital
+msgid "Share Capital"
+msgstr "Capital social"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__share_percent
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__share_percent
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__share_percent
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__share_percent
+msgid "Share Percentage"
+msgstr "Porcentagem de Participação"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__simple_end_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__simple_end_date
+msgid "Simple End Date"
+msgstr "Data de término simples"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__simple
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__simple
+msgid "Simple Indicator"
+msgstr "Indicador Simples"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company__simple_start_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__simple_start_date
+msgid "Simple Start Date"
+msgstr "Data Início Simples"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__situation
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__situation
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person__situation
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_form
+msgid "Situation"
+msgstr "Situação"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__situation_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__situation_date
+msgid "Situation Date"
+msgstr "Data da Situação"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__situation_reason
+msgid "Situation Reason"
+msgstr "Razão da Situação"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__situation_reason_id
+msgid "Situation Reason (Id)"
+msgstr "Razão da Situação (Id)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__situation_reason_name
+msgid "Situation Reason (Name)"
+msgstr "Razão da Situação (Nome)"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_company__company_size__03
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity__company_size__03
+msgid "Small"
+msgstr "Pequeno"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__special_situation
+msgid "Special Situation"
+msgstr "Situação Especial"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__special_situation_date
+msgid "Special Situation Date"
+msgstr "Data da Situação Especial"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner__start_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_company__start_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__start_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__start_date
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_person_company__start_date
+msgid "Start Date"
+msgstr "Data de Início"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__state
+msgid "State"
+msgstr "UF"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__state_id
+msgid "State (Id)"
+msgstr "UF (Id)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_ie__state_name
+msgid "State (Name)"
+msgstr "UF (Nome)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__addr_state_ibge
+msgid "State IBGE"
+msgstr "UF (IBGE)"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__ies
+#: model_terms:ir.ui.view,arch_db:aspide.aspide_external_entity_form
+msgid "State Insc"
+msgstr "Insc. Estadual"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_company_branch__situation__03
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity__situation__03
+msgid "Suspend"
+msgstr "Suspender"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_person__situation__2
+msgid "Suspensa"
+msgstr ""
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity_ie__type__2
+msgid "Tax substitute SI"
+msgstr "IE substituto fiscal"
+
+#. module: aspide
 #: model_terms:ir.ui.view,arch_db:aspide.view_company_form
 msgid "Test Connection"
 msgstr "Testar conexão"
 
 #. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_company__company_size__01
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity__company_size__01
+msgid "Tiny"
+msgstr "Pequena"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_person__situation__3
+msgid "Titular Falecido"
+msgstr ""
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_branch__type
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/constants.py:0
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_company_branch__situation__04
+#: model:ir.model.fields.selection,name:aspide.selection__aspide_external_entity__situation__04
+msgid "Uncapable"
+msgstr "Incapaz"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_company_regime__year
+msgid "Year"
+msgstr "Ano"
+
+#. module: aspide
+#: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__addr_zip_code
+msgid "Zip Code"
+msgstr "CEP"
+
+#. module: aspide
 #: model:ir.model.fields,help:aspide.field_res_company__aspide_database
 msgid "aspide"
-msgstr ""
+msgstr "aspide"
 
 #. module: aspide
 #: model:ir.model.fields,help:aspide.field_res_company__aspide_user
@@ -60,6 +1234,7 @@ msgid "https://aspide.tec.br"
 msgstr ""
 
 #. module: aspide
+#: model:ir.ui.menu,name:aspide.menu_aspide_main
 #: model_terms:ir.ui.view,arch_db:aspide.view_company_form
 msgid "ÁSPIDE"
 msgstr ""
@@ -93,4 +1268,4 @@ msgstr "ÁSPIDE - Usuário"
 #. odoo-python
 #: code:addons/aspide/models/company.py:0
 msgid "ÁSPIDE connection status"
-msgstr "Status da conexão ÁSPIDE"
+msgstr "ÁSPIDE - Status Conexão"

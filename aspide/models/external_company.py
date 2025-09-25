@@ -149,7 +149,8 @@ class aspide_external_company(models.Model):
             fields['name'] = branch['name']
             fields['situation'] = branch['situation']
             fields['situation_date'] = branch['situation_date']
-
+            fields['cnae_code'] = branch['cnae_code']
+            
             if branch['cnae_id']:
 
                 fields['cnae_id'] = branch['cnae_id']['id']

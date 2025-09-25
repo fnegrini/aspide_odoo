@@ -82,14 +82,8 @@
 						<field name="external_company" readonly="1" invisible="not external_company"/>
 						<field name="start_date" readonly="1"/>
 						<field name="share_percent" readonly="1"/>
+                        <field name="qualification_name" readonly="1"/>
 					</group>
-                    <group>
-                        <label for="qualification"/>
-                        <div>
-                            <field name="qualification" class="oe_inline" readonly="1"/>
-                            <field name="qualification_name" class="oe_inline" readonly="1"/>
-                        </div>
-                    </group>	                    
 				</sheet>
             </form>
         </field>
