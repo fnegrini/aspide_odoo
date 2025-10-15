@@ -78,6 +78,13 @@ class aspide_external_person(models.Model):
 
     def refresh_from_api(self, data):
 
+        if self.timestamp and self.timestamp != fields.Datetime.from_string(data['timestamp']):
+            
+                send_bus_notification(self.env, self.env.user.partner_id, \
+                    subject = _('Person data synchronized'), \
+                    body = _('Person %s synchronized data with ÁSPIDE') % (self.display_name), \
+                    type = 'success')
+
         self.timestamp = data['timestamp']
         self.error_message = False
         self.name = data['name']

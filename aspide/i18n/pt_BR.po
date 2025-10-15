@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-25 14:05+0000\n"
-"PO-Revision-Date: 2025-09-25 11:09-0300\n"
+"POT-Creation-Date: 2025-09-30 20:30+0000\n"
+"PO-Revision-Date: 2025-09-30 17:33-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -237,6 +237,12 @@ msgid "Company"
 msgstr "Empresa"
 
 #. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Company %s synchronized data with ÁSPIDE"
+msgstr "Dados da Empresa %s sincronizados com o ÁSPIDE"
+
+#. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__partner_external_company_name
 msgid "Company Name"
 msgstr "Nome da Empresa"
@@ -246,6 +252,12 @@ msgstr "Nome da Empresa"
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_entity__company_size
 msgid "Company Size"
 msgstr "Porte de Empresa"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/external_company.py:0
+msgid "Company data synchronized"
+msgstr "Dados da empresa sincronizados"
 
 #. module: aspide
 #: model:ir.model.constraint,message:aspide.constraint_aspide_external_company_unique_external_company
@@ -411,6 +423,18 @@ msgstr "Estabelecimentos"
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_entity_partner__entity
 msgid "Entity"
 msgstr "Estabelecimento"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/entity.py:0
+msgid "Entity %s synchronized data with ÁSPIDE"
+msgstr "Dados do Estabelecimento %s sincronizados com o ÁSPIDE"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/entity.py:0
+msgid "Entity data synchronized"
+msgstr "Dados do estabelecimento sincronizados"
 
 #. module: aspide
 #: model:ir.model.constraint,message:aspide.constraint_aspide_external_entity_unique_entity
@@ -956,9 +980,21 @@ msgid "Person"
 msgstr "Pessoa física"
 
 #. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/person.py:0
+msgid "Person %s synchronized data with ÁSPIDE"
+msgstr "Dados da pessoa física %s sincronizados com o ÁSPIDE"
+
+#. module: aspide
 #: model:ir.model.fields,field_description:aspide.field_aspide_external_company_partner_person__partner_external_company
 msgid "Person Company"
 msgstr "Empresa Pessoa"
+
+#. module: aspide
+#. odoo-python
+#: code:addons/aspide/models/person.py:0
+msgid "Person data synchronized"
+msgstr "Dados da pessoa física sincronizados"
 
 #. module: aspide
 #: model:ir.model.constraint,message:aspide.constraint_aspide_external_person_unique_entity

@@ -191,87 +191,94 @@ class aspide_external_entity(models.Model):
 
     def refresh_from_api(self, entity_data):
 
-        fields = {}
+        entity_fields = {}
         
-        fields['code'] = entity_data['code']  
-        fields['timestamp'] = entity_data['timestamp']
-        # fields['timestamp'] = fields.Datetime.now()
-        fields['error_message'] = False
-        fields['name'] = entity_data['name']
-        fields['type'] = entity_data['type']
-        fields['name_adm'] = entity_data['name_adm']
+        if self.timestamp and self.timestamp != fields.Datetime.from_string(entity_data['timestamp']):
 
-        fields['situation'] = entity_data['situation']
-        fields['situation_date'] = entity_data['situation_date']
-        fields['situation_reason'] = entity_data['situation_reason']
+                send_bus_notification(self.env, self.env.user.partner_id, \
+                    subject = _('Entity data synchronized'), \
+                    body = _('Entity %s synchronized data with ÁSPIDE') % (self.display_name), \
+                    type = 'success')
+
+        entity_fields['code'] = entity_data['code']  
+        entity_fields['timestamp'] = entity_data['timestamp']
+        # entity_fields['timestamp'] = entity_fields.Datetime.now()
+        entity_fields['error_message'] = False
+        entity_fields['name'] = entity_data['name']
+        entity_fields['type'] = entity_data['type']
+        entity_fields['name_adm'] = entity_data['name_adm']
+
+        entity_fields['situation'] = entity_data['situation']
+        entity_fields['situation_date'] = entity_data['situation_date']
+        entity_fields['situation_reason'] = entity_data['situation_reason']
 
         if entity_data['situation_reason_id']:
 
-            fields['situation_reason_id'] = entity_data['situation_reason_id']['id']
-            fields['situation_reason_name'] = entity_data['situation_reason_id']['display_name']
+            entity_fields['situation_reason_id'] = entity_data['situation_reason_id']['id']
+            entity_fields['situation_reason_name'] = entity_data['situation_reason_id']['display_name']
 
-        fields['foreign_city'] = entity_data['foreign_city']
-        fields['country_code'] = entity_data['country_code']
-        fields['country_name'] = entity_data['country_name']
-        #fields['country_id'] = #TODO - Fetch local id
+        entity_fields['foreign_city'] = entity_data['foreign_city']
+        entity_fields['country_code'] = entity_data['country_code']
+        entity_fields['country_name'] = entity_data['country_name']
+        #entity_fields['country_id'] = #TODO - Fetch local id
         
-        fields['legal_nature'] = entity_data['legal_nature']
+        entity_fields['legal_nature'] = entity_data['legal_nature']
         
         if entity_data['legal_nature_id']:
 
-            fields['legal_nature_id'] = entity_data['legal_nature_id']['id']
-            fields['legal_nature_name'] = entity_data['legal_nature_id']['display_name']
+            entity_fields['legal_nature_id'] = entity_data['legal_nature_id']['id']
+            entity_fields['legal_nature_name'] = entity_data['legal_nature_id']['display_name']
 
-        fields['start_date'] = entity_data['start_date']
-        fields['cnae_code'] = entity_data['cnae_code']
+        entity_fields['start_date'] = entity_data['start_date']
+        entity_fields['cnae_code'] = entity_data['cnae_code']
 
         if entity_data['cnae_id']:
-            fields['cnae_id'] = entity_data['cnae_id']['id']
-            fields['cnae_name'] = entity_data['cnae_id']['display_name']
+            entity_fields['cnae_id'] = entity_data['cnae_id']['id']
+            entity_fields['cnae_name'] = entity_data['cnae_id']['display_name']
 
-        fields['state_insc'] = entity_data['state_insc']
-        fields['addr_type'] = entity_data['addr_type']
-        fields['address'] = entity_data['address']
-        fields['addr_number'] = entity_data['addr_number']
-        fields['addr_comp'] = entity_data['addr_comp']
-        fields['addr_district'] = entity_data['addr_district']
-        fields['addr_zip_code'] = entity_data['addr_zip_code']
-        fields['addr_state'] = entity_data['addr_state']
+        entity_fields['state_insc'] = entity_data['state_insc']
+        entity_fields['addr_type'] = entity_data['addr_type']
+        entity_fields['address'] = entity_data['address']
+        entity_fields['addr_number'] = entity_data['addr_number']
+        entity_fields['addr_comp'] = entity_data['addr_comp']
+        entity_fields['addr_district'] = entity_data['addr_district']
+        entity_fields['addr_zip_code'] = entity_data['addr_zip_code']
+        entity_fields['addr_state'] = entity_data['addr_state']
 
         if entity_data['state_id']:
-            fields['addr_state_id'] = entity_data['state_id']['id']
-            fields['addr_state_name'] = entity_data['state_id']['display_name']
+            entity_fields['addr_state_id'] = entity_data['state_id']['id']
+            entity_fields['addr_state_name'] = entity_data['state_id']['display_name']
 
-        fields['addr_state_ibge'] = entity_data['addr_ibge_state']        
-        fields['addr_city_code'] = entity_data['addr_city_code']
-        fields['addr_city_ibge_code'] = entity_data['addr_city_ibge_code']
+        entity_fields['addr_state_ibge'] = entity_data['addr_ibge_state']        
+        entity_fields['addr_city_code'] = entity_data['addr_city_code']
+        entity_fields['addr_city_ibge_code'] = entity_data['addr_city_ibge_code']
 
         if entity_data['city']:
 
-            fields['addr_city_id'] = entity_data['city']['id']
-            fields['addr_city_name'] = entity_data['city']['display_name']
+            entity_fields['addr_city_id'] = entity_data['city']['id']
+            entity_fields['addr_city_name'] = entity_data['city']['display_name']
 
-        fields['phone1'] = entity_data['phone1']
-        fields['phone2'] = entity_data['phone2']
-        fields['fax'] = entity_data['fax']
-        fields['email'] = entity_data['email']
+        entity_fields['phone1'] = entity_data['phone1']
+        entity_fields['phone2'] = entity_data['phone2']
+        entity_fields['fax'] = entity_data['fax']
+        entity_fields['email'] = entity_data['email']
 
-        fields['partner_qualification'] = entity_data['partner_qualification']
+        entity_fields['partner_qualification'] = entity_data['partner_qualification']
 
         if entity_data['partner_qualification_id']:
-            fields['partner_qualification_id'] = entity_data['partner_qualification_id']['id']
-            fields['partner_qualification_name'] = entity_data['partner_qualification_id']['display_name']
+            entity_fields['partner_qualification_id'] = entity_data['partner_qualification_id']['id']
+            entity_fields['partner_qualification_name'] = entity_data['partner_qualification_id']['display_name']
 
-        fields['share_capital'] = entity_data['share_capital']
-        fields['company_size'] = entity_data['company_size']
-        fields['simple'] = entity_data['simple']
-        fields['simple_start_date'] = entity_data['simple_start_date']
-        fields['simple_end_date'] = entity_data['simple_end_date']
-        fields['ind_mei'] = entity_data['ind_mei']
-        fields['special_situation'] = entity_data['special_situation']
-        fields['special_situation_date'] = entity_data['special_situation_date']
+        entity_fields['share_capital'] = entity_data['share_capital']
+        entity_fields['company_size'] = entity_data['company_size']
+        entity_fields['simple'] = entity_data['simple']
+        entity_fields['simple_start_date'] = entity_data['simple_start_date']
+        entity_fields['simple_end_date'] = entity_data['simple_end_date']
+        entity_fields['ind_mei'] = entity_data['ind_mei']
+        entity_fields['special_situation'] = entity_data['special_situation']
+        entity_fields['special_situation_date'] = entity_data['special_situation_date']
 
-        self.write(fields)
+        self.write(entity_fields)
 
         self.refresh_partners_from_api(entity_data['partners'])
 
