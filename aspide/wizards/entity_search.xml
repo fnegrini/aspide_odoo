@@ -1,0 +1,187 @@
+<odoo>
+  <data>
+
+        <record model="ir.ui.view" id="aspide_external_entity_search_wizard_form">
+            <field name="name">aspide.external.entity.search.wizard.form</field>
+            <field name="model">aspide.external.entity.search.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Import External Entity">
+                    <sheet>
+                        <field name="state" invisible="1"/>
+                        <group invisible="state not in ['init']">
+                            <field name="name" readonly="state not in ['init']" required="1"/>
+                            <field name="country_state" readonly="state not in ['init']" required="1" domain="[('country_id','=', %(base.br)d )]"/>
+                            <field name="city" readonly="state not in ['init']"/>
+                            <field name="cnaes" readonly="state not in ['init']"/>
+                        </group>
+                        <group invisible="state not in ['done']">
+                            <notebook name="notebook">
+                                <page string="Entities" name="partner">
+                                    <field name="entities" widget="one2many_list" colspan="2" nolabel="1" readonly="1"/>
+                                </page>                   
+                            </notebook>             
+                        </group>
+                        <footer invisible="state not in ['init']">
+                            <button name="process" type="object" string="Search" class="oe_highlight"/>
+                        </footer>                        
+    				</sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="aspide_external_entity_search_wizard_cnae_form">
+            <field name="name">aspide.external.entity.search.wizard.cnae.form</field>
+            <field name="model">aspide.external.entity.search.wizard.cnae</field>
+            <field name="arch" type="xml">
+                <form string="Import External Entity - CNAE">
+                    <sheet>
+                        <group>
+                            <field name="cnae" required="1"/>
+                        </group>
+    				</sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="aspide_external_entity_search_wizard_cnae_tree">
+            <field name="name">aspide.external.entity.search.wizard.cnae.tree</field>
+            <field name="model">aspide.external.entity.search.wizard.cnae</field>
+            <field name="priority">99999</field>
+            <field name="arch" type="xml">
+                <list string="Import External Entity - CNAE">
+                    <field name="cnae"/>
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="aspide_external_entity_search_wizard_entity_tree">
+            <field name="name">aspide.external.entity.search.wizard.entity.tree</field>
+            <field name="model">aspide.external.entity.search.wizard.entity</field>
+            <field name="priority">99999</field>
+            <field name="arch" type="xml">
+                <list string="Entity">
+                    <button name="import_entity" type="object" class="oe_highlight" icon="oi-archive"/>
+                    <field name="code"/>
+                    <field name="name" />
+                    <field name="cnae_code" />
+                    <field name="cnae_name" />
+                    <field name="addr_state" />
+                    <field name="addr_city_name" />
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="aspide_external_entity_search_wizard_entity_form">
+            <field name="name">aspide.external.entity.search.wizard.entity.form</field>
+            <field name="model">aspide.external.entity.search.wizard.entity</field>
+            <field name="arch" type="xml">
+                <form string="External Entity - Complete Analisys">
+                    <sheet>
+                        <group >
+                            <field name="code"/>
+                            <field name="name" />
+                            <field name="type" />
+                            <field name="start_date" />
+                            <field name="cnae_code" />
+                            <field name="cnae_name" />
+                            <field name="cnae_others" />
+                        </group>
+                        <notebook name="aspide_sub">
+                            <page string="Situation" >
+                                <sheet>
+                                    <group >
+                                        <field name="situation"/>
+                                        <field name="situation_date"/>
+                                        <field name="situation_reason" />
+                                        <field name="special_situation" />
+                                        <field name="special_situation_date" />
+                                    </group>
+                                </sheet>
+                            </page>
+                            <page string="Address" >
+                                <sheet>
+                                    <group >
+                                        <field name="addr_type"/>
+                                        <field name="address"/>
+                                        <field name="addr_number" />
+                                        <field name="addr_comp" />
+                                        <field name="addr_district" />
+                                        <field name="addr_zip_code" />
+                                        <field name="addr_state" />
+                                        <field name="addr_city_code" />
+                                        <field name="addr_city_name" />
+                                    </group>
+                                </sheet>
+                            </page>  		                    
+                            <page string="Foreign Location" >
+                                <sheet>
+                                    <group >
+                                        <field name="foreign_city"/>
+                                        <field name="country_code"/>
+                                    </group>
+                                </sheet>
+                            </page>          
+                            <page string="Communication" >
+                                <sheet>
+                                    <group >
+                                        <field name="phone1_ddd"/>
+                                        <field name="phone1"/>
+                                        <field name="phone2_ddd"/>
+                                        <field name="phone2"/>
+                                        <field name="fax_ddd"/>
+                                        <field name="fax"/>
+                                        <field name="email"/>
+                                    </group>
+                                </sheet>
+                            </page> 
+                            <page string="Company" >
+                                <sheet>
+                                    <group >
+                                        <field name="company_name"/>
+                                        <field name="legal_nature"/>
+                                        <field name="legal_nature_name"/>
+                                        <field name="partner_qualification"/>
+                                        <field name="share_capital"/>
+                                        <field name="company_size"/>
+                                        <field name="federative_entity"/>
+                                    </group>
+                                </sheet>
+                            </page> 
+                            <page string="Simple" >
+                                <sheet>
+                                    <group >
+                                        <field name="simple"/>
+                                        <field name="simple_start_date"/>
+                                        <field name="simple_end_date"/>
+                                        <field name="ind_mei"/>
+                                        <field name="mei_start_date"/>
+                                        <field name="mei_end_date"/>
+                                    </group>
+                                </sheet>
+                            </page> 
+                        </notebook>
+                        <footer>
+                            <button name="import_entity" type="object" class="oe_highlight" icon="oi-archive"/>
+                        </footer>                            
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="aspide_external_entity_search_wizard_action">
+            <field name="name">Search External Entity</field>
+            <field name="res_model">aspide.external.entity.search.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="aspide_external_entity_search_wizard_form"/>
+            <field name="target">new</field>
+        </record> 
+
+        <menuitem id="aspide_external_entity_search_wizard_menu" 
+            name="Search External Entity" 
+            groups="group_aspide_entity" 
+            parent="menu_aspide_main" 
+            action="aspide_external_entity_search_wizard_action" 
+            sequence="110"/>
+        	    
+  </data>
+</odoo>

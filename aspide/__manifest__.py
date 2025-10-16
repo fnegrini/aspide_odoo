@@ -25,6 +25,7 @@
         'views/entity.xml',
         'views/external_company.xml',
         'views/person.xml',
+        'wizards/entity_search.xml',
         'data/data.xml',
     ],
 	

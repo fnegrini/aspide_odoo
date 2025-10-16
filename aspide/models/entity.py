@@ -159,7 +159,7 @@ class aspide_external_entity(models.Model):
 
 
     @api.model
-    def check_entity(self, code, company_id):
+    def check_entity(self, code, company_id=False):
 
         if company_id:
             company = company_id
@@ -174,11 +174,11 @@ class aspide_external_entity(models.Model):
         
         else:
 
-            entities = self.create({'company_id': company.id, 'code': code})
+            entity = self.create({'company_id': company.id, 'code': code})
 
-            entities.retrieve()
+            entity.retrieve()
 
-            return entities
+            return entity
 
 
     @api.depends('code','name','name_adm')

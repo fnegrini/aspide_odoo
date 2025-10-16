@@ -202,7 +202,6 @@ class api_client():
                 raise  Exception(response_dict['error']['data']['message'])
             else:
                 return response_dict['result']
-    
         
         else:
 
@@ -350,9 +349,22 @@ class aspide_client(api_client):
 
         return data['object']
 
+    
+    def search_entities(self, params):
+
+        uri = '/grifo_external_source/entity/search/'
+
+        data = self.call("POST", uri, params)
+
+        if data['status'] != 200:
+
+            raise UserError(data['message'])
+
+        return data['objects']
+
 
 def run_test():
-    client = api_client('aspide.tec.br', 'backbone', 'admin', 'backbone')
+    client = api_client('aspide.tec.br', 'aspide', 'teste', 'teste')
 
     client.authenticate()
 

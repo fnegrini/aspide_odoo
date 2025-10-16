@@ -4,7 +4,7 @@
     <!-- ASPIDE Main -->
     <menuitem name="ÁSPIDE"
         id="menu_aspide_main"
-        groups="aspide.group_aspide_entity"
+        groups="group_aspide_entity,group_aspide_entity_reader"
         web_icon="aspide,static/description/icon.png"
         sequence="10000"/>
 

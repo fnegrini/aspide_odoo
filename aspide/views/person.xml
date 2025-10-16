@@ -22,8 +22,8 @@
 			<form string="External Person">
 				<sheet>
 					<header>
-						<button name="retrieve" type="object" string="Retrieve data" class="oe_highlight"/>
-						<button name="search_companies" type="object" string="Search companies" class="oe_highlight"/>
+						<button name="retrieve" type="object" string="Retrieve data" class="oe_highlight" groups="aspide.group_aspide_entity"/>
+						<button name="search_companies" type="object" string="Search companies" class="oe_highlight" groups="aspide.group_aspide_entity"/>
 					</header>
 					<group>
 						<field name="timestamp" readonly="1"/>
@@ -73,7 +73,7 @@
 			<form string="External Person company">
 				<sheet>
 					<header>
-						<button name="fetch_company" type="object" string="Fetch Company" class="oe_highlight"/>
+						<button name="fetch_company" type="object" string="Fetch Company" class="oe_highlight" groups="aspide.group_aspide_entity"/>
 					</header>	                    
 					<group>
 						<field name="person" readonly="1"/>
@@ -107,7 +107,7 @@
         id="menu_aspide_external_person" 
         parent="menu_aspide_main" 
         action="aspide_external_person_action" 
-        groups="group_aspide_entity"
+        groups="group_aspide_entity,group_aspide_entity_reader"
         sequence="300"/>
 
  	<!-- Rule -->
