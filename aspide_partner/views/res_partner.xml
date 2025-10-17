@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_partner_form">
+            <field name="name">view.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <!-- <field name='l10n_br_ie_code' position="before">
+                 
+                </field> -->
+                <page name="internal_notes" position="after">
+                    <page name="aspide" string="ÁSPIDE">
+                        <group>
+                            <field name="aspide_entity" readonly="1" invisible="not is_company"/>
+                            <field name="aspide_person" readonly="1" invisible="is_company"/>
+                        </group>
+                        <group>
+                            <button name="aspide_check" string="Check" type="object" class="oe_highlight" icon="fa-download"/>
+                            <button name="aspide_update" string="Update" type="object" class="oe_highlight" icon="fa-refresh"/>
+                        </group>                           
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</odoo>

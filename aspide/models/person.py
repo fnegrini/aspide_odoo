@@ -46,6 +46,29 @@ class aspide_external_person(models.Model):
             rec.display_name = "%s - %s" % (rec.code, rec.name or '')
 
 
+    @api.model
+    def check_person(self, code, company_id=False):
+
+        if company_id:
+            company = company_id
+        else:
+            company = self.env.company
+        
+        persons = self.search([('company_id','=', company.id), ('code', '=', code)])
+
+        if len(persons) > 0:
+
+            return persons[0]
+        
+        else:
+
+            person = self.create({'company_id': company.id, 'code': code})
+
+            person.retrieve()
+
+            return person
+
+
     def retrieve(self, user=False):
 
         try:

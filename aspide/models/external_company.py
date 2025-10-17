@@ -89,6 +89,7 @@ class aspide_external_company(models.Model):
                     type = 'success')
 
         self.timestamp = data['timestamp']
+        self.code = data['code']
         self.error_message = False
         self.name = data['name']
         self.legal_nature = data['legal_nature']

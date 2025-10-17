@@ -10,15 +10,19 @@
 			<data>
 				<xpath expr="//notebook" position="inside">
 					<page string="ÁSPIDE" name="aspide" >
-						<group>
-							<field name="aspide_url"/>
-							<field name="aspide_database"/>
-							<field name="aspide_user"/>
-							<field name="aspide_password" password="True"/>
-						</group>
-						<group>
-							<button name="aspide_test_connection" type="object" string="Test Connection" class="oe_highlight"/>
-						</group>
+						<notebook name='aspide'>
+							<page name="aspide_server" string="Server">
+								<group>
+									<field name="aspide_url"/>
+									<field name="aspide_database"/>
+									<field name="aspide_user"/>
+									<field name="aspide_password" password="True"/>
+								</group>
+								<group>
+									<button name="aspide_test_connection" type="object" string="Test Connection" class="oe_highlight"/>
+								</group>
+							</page>
+						</notebook>
 					</page>
 				</xpath>
 			</data>
