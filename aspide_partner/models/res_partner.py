@@ -79,6 +79,7 @@ class ResPartner(models.Model):
         else:
 
             return False
+            
 
     def aspide_update_by_entity(self):
 
@@ -111,6 +112,7 @@ class ResPartner(models.Model):
         
         if not self.email:
             self.email = self.aspide_entity.email
+
         
     def aspide_update_by_person(self):
 
@@ -120,6 +122,7 @@ class ResPartner(models.Model):
 
         self.name = self.aspide_person.name
         self.complete_name = self.name
+
     
     def aspide_update(self):
 
