@@ -13,7 +13,7 @@ class ResPartner(models.Model):
 
     def aspide_update_by_entity(self):
 
-        super(ResPartner,self).aspide_update_by_entity
+        super(ResPartner,self).aspide_update_by_entity()
 
         if not self.aspide_entity.id:
 
