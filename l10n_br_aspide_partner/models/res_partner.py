@@ -19,6 +19,20 @@ class ResPartner(models.Model):
 
             return
 
+        #City
+        if self.aspide_entity.addr_city_name:
+
+            city = self.env["res.city"].search(
+                [
+                    ("name", "=ilike", self.aspide_entity.addr_city_name),
+                    ("state_id.id", "=", self.state_id.id ),
+                ]
+            )
+
+            if len(city) == 1:
+
+                self.city_id = city
+
         #Tax framework
         if self.aspide_entity.simple:
 
