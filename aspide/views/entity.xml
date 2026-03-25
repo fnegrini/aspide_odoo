@@ -30,8 +30,8 @@
 						<field name="error_message" readonly="1" invisible="not error_message"/>
 					</group>
 					<group colspan="4">
-						<field name="company_id" invisible="1"/>
-						<field name="external_company" readonly="1" invisible="not external_company"/>
+						<field name="company_id" invisible="1" options="{'no_create_edit': True, 'no_quick_create': True}"/>
+						<field name="external_company" readonly="1" invisible="not external_company" options="{'no_create_edit': True, 'no_quick_create': True}"/>
 						<field name="code" required="1" readonly="timestamp"/>
 						<field name="name" readonly="1"/>
 						<field name="name_adm" readonly="1"/>
@@ -139,7 +139,7 @@
 			<form string="External Entity - State Insc">
 				<sheet>
 					<group>
-						<field name="entity" readonly="1"/>
+						<field name="entity" readonly="1" options="{'no_create_edit': True, 'no_quick_create': True}"/>
 						<field name="state" readonly="1"/>
 						<field name="code" readonly="1"/>
 						<field name="enabled" readonly="1"/>
@@ -171,7 +171,7 @@
 			<form string="External Entity - Secondary CNAEs">
 				<sheet>
 					<group>
-						<field name="entity" readonly="1"/>
+						<field name="entity" readonly="1" options="{'no_create_edit': True, 'no_quick_create': True}"/>
 						<field name="cnae_name" readonly="1"/>
 					</group>
 				</sheet>
@@ -199,7 +199,7 @@
 			<form string="External Entity - Partner">
 				<sheet>
 					<group>
-						<field name="entity" readonly="1"/>
+						<field name="entity" readonly="1" options="{'no_create_edit': True, 'no_quick_create': True}"/>
 						<field name="type" readonly="1"/>
 						<field name="code" readonly="1"/>
 						<field name="name" readonly="1"/>

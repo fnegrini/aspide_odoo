@@ -10,7 +10,7 @@
                         <field name="state" invisible="1"/>
                         <group invisible="state not in ['init']">
                             <field name="name" readonly="state not in ['init']" required="1"/>
-                            <field name="country_state" readonly="state not in ['init']" required="1" domain="[('country_id','=', %(base.br)d )]"/>
+                            <field name="country_state" readonly="state not in ['init']" required="1" domain="[('country_id','=', %(base.br)d )]" options="{'no_create_edit': True, 'no_quick_create': True}"/>
                             <field name="city" readonly="state not in ['init']"/>
                             <field name="cnaes" readonly="state not in ['init']"/>
                         </group>
